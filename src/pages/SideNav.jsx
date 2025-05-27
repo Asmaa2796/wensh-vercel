@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const SideNav = ({ isOpen, toggleSideNav }) => {
-  // Close nav when a link is clicked (only on small screens)
+  const sideNavRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isOpen &&
+        window.innerWidth < 1200 &&
+        sideNavRef.current &&
+        !sideNavRef.current.contains(event.target)
+      ) {
+        toggleSideNav();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside); // for touch devices (iPhone, Android)
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isOpen, toggleSideNav]);
+
   const handleLinkClick = () => {
     if (window.innerWidth < 1200) {
       toggleSideNav();
@@ -10,7 +32,10 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
   };
 
   return (
-    <div className={`sidenav ${isOpen ? "openNav" : "closedNav"}`}>
+    <div
+      ref={sideNavRef}
+      className={`sidenav ${isOpen ? "openNav" : "closedNav"}`}
+    >
       <span className="closeNav" onClick={toggleSideNav}>
         <i className="bi bi-x"></i>
       </span>
@@ -23,7 +48,7 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
           </Link>
         </li>
         <li>
-          <Link to="#" onClick={handleLinkClick}>
+          <Link to="favourites" onClick={handleLinkClick}>
             <span className="sub-text">
               <img src="/img/icons/Icon2.png" alt="Icon2.png" /> المفضلة
             </span>
@@ -36,52 +61,31 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
             </span>
           </Link>
         </li>
+        <li>
+          <Link to="branches" onClick={handleLinkClick}>
+            <span className="sub-text">
+              <img src="/img/icons/Icon15.png" alt="Icon3.png" /> فروع الونش
+            </span>
+          </Link>
+        </li>
 
-        {/* Example Dropdown */}
-        <li className="dropdown">
-          <a
-            className="dropdown-toggle sub-text"
-            data-bs-toggle="dropdown"
-            role="button"
-            aria-expanded="false"
-          >
-            <img src="/img/icons/Icon5.png" alt="Icon5.png" /> موردين المشتريات
-          </a>
-          <ul className="dropdown-menu">
-            <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 1
-              </Link>
-            </li>
-            <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 2
-              </Link>
-            </li>
-          </ul>
+        <li>
+          <Link to="vendors" onClick={handleLinkClick}>
+            <span className="sub-text">
+              <img src="/img/icons/Icon5.png" alt="Icon3.png" /> موردين
+              المشتريات
+            </span>
+          </Link>
         </li>
-        <li className="dropdown">
-          <a
-            className="dropdown-toggle sub-text"
-            data-bs-toggle="dropdown"
-            role="button"
-            aria-expanded="false"
-          >
-            <img src="/img/icons/Icon6.png" alt="Icon6.png" /> العملاء الأفراد
-          </a>
-          <ul className="dropdown-menu">
-            <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 1
-              </Link>
-            </li>
-            <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 2
-              </Link>
-            </li>
-          </ul>
+        <li>
+          <Link to="clients" onClick={handleLinkClick}>
+            <span className="sub-text">
+              <img src="/img/icons/Icon5.png" alt="Icon6.png" />
+               العملاء الأفراد
+            </span>
+          </Link>
         </li>
+
         <li className="dropdown">
           <a
             className="dropdown-toggle sub-text"
@@ -148,32 +152,18 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
             </li>
           </ul>
         </li>
-        <li className="dropdown">
-          <a
-            className="dropdown-toggle sub-text"
-            data-bs-toggle="dropdown"
-            role="button"
-            aria-expanded="false"
-          >
-            <img src="/img/icons/Icon10.png" alt="Icon10.png" /> التقييمات
-          </a>
-          <ul className="dropdown-menu">
-            <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 1
-              </Link>
-            </li>
-            <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 2
-              </Link>
-            </li>
-          </ul>
+        <li>
+          <Link to="ratings" onClick={handleLinkClick}>
+            <span className="sub-text">
+              <img src="/img/icons/Icon10.png" alt="Icon6.png" />
+              التقييمات
+            </span>
+          </Link>
         </li>
         <li>
           <Link>
             <span className="sub-text">
-              <img src="/img/icons/Icon10.png" alt="Icon11.png" /> الحسابات
+              <img src="/img/icons/Icon17.png" alt="Icon11.png" /> الحسابات
               البنكية
             </span>
           </Link>
@@ -181,7 +171,7 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
         <li>
           <Link>
             <span className="sub-text">
-              <img src="/img/icons/Icon10.png" alt="Icon12.png" /> السحب
+              <img src="/img/icons/Icon16.png" alt="Icon12.png" /> السحب
               والإيداع
             </span>
           </Link>
@@ -193,7 +183,7 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
             role="button"
             aria-expanded="false"
           >
-            <img src="/img/icons/Icon10.png" alt="Icon13.png" /> طلبات الرحلات
+            <img src="/img/icons/Icon18.png" alt="Icon13.png" /> طلبات الرحلات
           </a>
           <ul className="dropdown-menu">
             <li>
@@ -213,7 +203,7 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
         <li>
           <Link to="#" onClick={handleLinkClick}>
             <span className="sub-text">
-              <img src="/img/icons/Icon10.png" alt="Icon13.png" /> الإيجارات
+              <img src="/img/icons/Icon18.png" alt="Icon13.png" /> الإيجارات
               (الرئيسي)
             </span>
           </Link>
@@ -221,7 +211,7 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
         <li>
           <Link to="#" onClick={handleLinkClick}>
             <span className="sub-text">
-              <img src="/img/icons/Icon10.png" alt="Icon13.png" /> الإيجارات
+              <img src="/img/icons/Icon18.png" alt="Icon13.png" /> الإيجارات
               (الأسطول)
             </span>
           </Link>
@@ -229,7 +219,7 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
         <li>
           <Link to="#" onClick={handleLinkClick}>
             <span className="sub-text">
-              <img src="/img/icons/Icon10.png" alt="Icon13.png" /> الإيجارات
+              <img src="/img/icons/Icon18.png" alt="Icon13.png" /> الإيجارات
               (التأجير)
             </span>
           </Link>

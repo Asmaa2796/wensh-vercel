@@ -54,7 +54,7 @@ const ExportOrders = () => {
               <option value="">حدد عنصر</option>
             </select>
           </div>
-          <div className="col-xl-3 col-lg-6 col-md-6 col-12">
+          <div className="col-xl-3 col-lg-6 col-md-6 col-12 text-center">
             <button className="btn show_result">عرض النتائج</button>
             <button className="btn show_all">عرض الكل</button>
           </div>
@@ -222,17 +222,17 @@ const ExportOrders = () => {
       </div>
       {/* pagination  */}
       <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i class="fa fa-caret-right"></i></a>
+        <ul className="pagination">
+          <li className="page-item disabled">
+            <a className="page-link" href="#" tabIndex="-1" aria-disabled="true"><i className="fa fa-caret-right"></i></a>
           </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item active" aria-current="page">
-            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+          <li className="page-item"><a className="page-link" href="#">1</a></li>
+          <li className="page-item active" aria-current="page">
+            <a className="page-link" href="#">2 <span className="sr-only">(current)</span></a>
           </li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#"><i class="fa fa-caret-left"></i></a>
+          <li className="page-item"><a className="page-link" href="#">3</a></li>
+          <li className="page-item">
+            <a className="page-link" href="#"><i className="fa fa-caret-left"></i></a>
           </li>
         </ul>
       </nav>

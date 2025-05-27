@@ -70,7 +70,7 @@ a {
 }
 
 .text-color {
-  color: var(--text-color);
+  color: var(--text-color) !important;
 }
 
 .sub-text {
@@ -88,11 +88,11 @@ a {
 .text-gray {
   color: #777;
 }
-
+.border-lighter {border: 1px solid #ffffff1f !important;}
 .text-lg {
   font-size: large;
 }
-
+.text-custom {font-size: 12px;}
 .text-md {
   font-size: medium;
 }
@@ -113,6 +113,7 @@ a {
   border-radius: 25px !important;
 }
 .div-bg {background-color: var(--main-color);}
+.input-bg {background-color: #1a2146 !important;}
 select {
   cursor: pointer;
   appearance: none;
@@ -175,6 +176,7 @@ select {
   background-color: var(--main-color);
   height: 36px;
   margin: 5px 0;
+  font-size: 13px;
 }
 
 .form-style textarea {
@@ -184,6 +186,7 @@ select {
   border: 1px solid #eee;
   border-radius: 4px;
   margin: 8px 0;
+  font-size: 13px;
 }
 .form-style input,.form-style textarea {color: var(--text-lighter);}
 .form-style input::placeholder,
@@ -346,6 +349,12 @@ button.notification span {
   transition: all .3s ease-in-out;
 }
 
+@media (max-width: 500px) {
+  .topnav .dropdown-menu-end[data-bs-popper] {
+    right: 0;
+    left: auto;
+}
+}
 @media (min-width: 1191px) {
   .sidenav.openNav {
     right: 0;
@@ -405,8 +414,9 @@ button.notification span {
     font-size: 24px;
     cursor: pointer;
   }
+  
 }
-
+/* end media */
 .sidenav {
   background-color: var(--main-color);
   width: 250px;
