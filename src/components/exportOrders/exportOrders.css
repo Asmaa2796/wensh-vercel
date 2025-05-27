@@ -38,15 +38,15 @@
 
 .table-responsive::-webkit-scrollbar {
   width: 1px;
-  height: 2px;
+  height: 8px;
 }
 
 .table-responsive::-webkit-scrollbar-track {
-  background: #0b102a;
+  background: #42A5F5;
 }
 
 .table-responsive::-webkit-scrollbar-thumb {
-  background-color: #eeeeee40;
+  background-color: #8d95d3;
   border-radius: 20px;
   border: 1px solid #0b102a;
 }
