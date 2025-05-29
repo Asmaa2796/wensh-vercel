@@ -1,33 +1,34 @@
 import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
-import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 const Ratings = () => {
+  const {t,i18n} = useTranslation('global');
   const { setTitle } = useTitle();
 
   useEffect(() => {
-    setTitle("التقييمات");
-  }, [setTitle]);
+    setTitle(t('sidenav.ratings'));
+  }, [setTitle, t, i18n.language]);
   return (
     <>
       {/* form */}
       <form className="table_form form-style my-3 py-3">
         <div className="row align-items-center">
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">من</label>
+            <label className="text-light">{t('labels.from')} </label>
              <input type="text" name="from" />
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">إلى</label>
+            <label className="text-light">{t('labels.to')} </label>
             <input type="text" name="to" />
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">الحالة</label>
+            <label className="text-light">{t('labels.status')} </label>
             <select name="vendor_type">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')} </option>
             </select>
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">التقييم</label>
+            <label className="text-light">{t('labels.rating')} </label>
             <select name="rate">
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -37,12 +38,12 @@ const Ratings = () => {
             </select>
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">تقرير</label>
+            <label className="text-light">{t('labels.report')} </label>
             <input name="report"/>
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12 text-center">
-            <button className="btn show_result">عرض النتائج</button>
-            <button className="btn show_all">عرض الكل</button>
+            <button className="btn show_result">{t('btns.viewResults')} </button>
+            <button className="btn show_all">{t('btns.viewAll')}</button>
           </div>
         </div>
       </form>
@@ -55,22 +56,21 @@ const Ratings = () => {
                   #
                 </th>
                 <th scope="col" className="text-lighter">
-                  التعليق 
+                  {t('labels.comment')} 
                 </th>
                 <th scope="col" className="text-lighter">
-                  التقييم
+                  {t('labels.rating')} 
                 </th>
                 <th scope="col" className="text-lighter">
-                  من 
+                  {t('labels.from')}  
                 </th>
                 <th scope="col" className="text-lighter">
-                  إلى
+                  {t('labels.to')} 
                 </th>
                 <th scope="col" className="text-lighter">
-                  الطلب
+                  {t('labels.order')} 
                 </th>
-                <th className="text-lighter">تاريخ الإرسال </th>
-                <th></th>
+                <th className="text-lighter">{t('labels.sendDate')}  </th>
               </tr>
             </thead>
             <tbody>
@@ -78,10 +78,10 @@ const Ratings = () => {
                 <td className="sub-text">23154</td>
                 <td className="sub-text">ممتاز جداً ورقي بالتعامل</td>
                 <td className="sub-text">
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
                 </td>
                 <td className="sub-text">مزود الخدمة - <span className="text-color"> أحمد عابدين</span></td>
                 <td className="sub-text">قطاع الأعمال  - <span className="text-color">مؤسسة إدارة الحلوى للحلويات</span></td>
@@ -92,10 +92,10 @@ const Ratings = () => {
                 <td className="sub-text">23154</td>
                 <td className="sub-text">ممتاز جداً ورقي بالتعامل</td>
                 <td className="sub-text">
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
                 </td>
                 <td className="sub-text">مزود الخدمة - <span className="text-color"> أحمد عابدين</span></td>
                 <td className="sub-text">قطاع الأعمال  - <span className="text-color">مؤسسة إدارة الحلوى للحلويات</span></td>
@@ -106,10 +106,10 @@ const Ratings = () => {
                 <td className="sub-text">23154</td>
                 <td className="sub-text">ممتاز جداً ورقي بالتعامل</td>
                 <td className="sub-text">
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
                 </td>
                 <td className="sub-text">مزود الخدمة - <span className="text-color"> أحمد عابدين</span></td>
                 <td className="sub-text">قطاع الأعمال  - <span className="text-color">مؤسسة إدارة الحلوى للحلويات</span></td>
@@ -120,10 +120,10 @@ const Ratings = () => {
                 <td className="sub-text">23154</td>
                 <td className="sub-text">ممتاز جداً ورقي بالتعامل</td>
                 <td className="sub-text">
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
                 </td>
                 <td className="sub-text">مزود الخدمة - <span className="text-color"> أحمد عابدين</span></td>
                 <td className="sub-text">قطاع الأعمال  - <span className="text-color">مؤسسة إدارة الحلوى للحلويات</span></td>
@@ -134,10 +134,10 @@ const Ratings = () => {
                 <td className="sub-text">23154</td>
                 <td className="sub-text">ممتاز جداً ورقي بالتعامل</td>
                 <td className="sub-text">
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
-                    <i className="bi bi-star text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
+                    <i className="bi bi-star-fill text-warning"></i>
                 </td>
                 <td className="sub-text">مزود الخدمة - <span className="text-color"> أحمد عابدين</span></td>
                 <td className="sub-text">قطاع الأعمال  - <span className="text-color">مؤسسة إدارة الحلوى للحلويات</span></td>

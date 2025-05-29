@@ -15,8 +15,16 @@ import AddVendor from "./components/vendors/AddVendor";
 import Clients from "./components/clients/Clients";
 import AddClient from "./components/clients/AddClient";
 import Ratings from "./components/ratings/Ratings";
+import BusinessSector from "./components/businessSector/BusinessSector";
+import AddBusinessSector from "./components/businessSector/AddBusinessSector";
+import BusinessSectorUsers from "./components/businessSector/BusinessSectorUsers";
+import OfficialRecievingDocs from "./components/businessSector/OfficialRecievingDocs";
+import BusinessSectorContracts from "./components/businessSector/BusinessSectorContracts";
+import CreditLimit from "./components/businessSector/CreditLimit";
+import BusinessDocs from "./components/businessSector/BusinessDocs";
 
 function App() {
+  
   return (
     <>
       <Router>
@@ -33,6 +41,13 @@ function App() {
             <Route path="clients" element={<Clients />} />
             <Route path="clients/add_client" element={<AddClient />} />
             <Route path="ratings" element={<Ratings />} />
+            <Route path="business_sector" element={<BusinessSector />} />
+            <Route path="business_sector/add" element={<AddBusinessSector />} />
+            <Route path="business_sector/users" element={<BusinessSectorUsers />} />
+            <Route path="business_sector/official_recieving_docs" element={<OfficialRecievingDocs />} />
+            <Route path="business_sector/contracts" element={<BusinessSectorContracts />} />
+            <Route path="business_sector/credit_limit" element={<CreditLimit />} />
+            <Route path="business_sector/business_docs" element={<BusinessDocs />} />
           </Route>
         </Routes>
         <Footer />

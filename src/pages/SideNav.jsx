@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const SideNav = ({ isOpen, toggleSideNav }) => {
+  const {t,i18n} = useTranslation('global');
   const sideNavRef = useRef();
 
   useEffect(() => {
@@ -42,158 +44,191 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
       <ul className="mb-0 mt-5 list-unstyled main-ul">
         <li>
           <Link to="/" onClick={handleLinkClick}>
-            <span className="sub-text">
-              <img src="/img/icons/Icon1.png" alt="Icon1.png" /> الرئيسية
+            <span className="text-gray">
+              <img src="/img/icons/Icon1.png" alt="Icon1.png" /> 
+              {t('sidenav.home')}
             </span>
           </Link>
         </li>
         <li>
           <Link to="favourites" onClick={handleLinkClick}>
-            <span className="sub-text">
-              <img src="/img/icons/Icon2.png" alt="Icon2.png" /> المفضلة
+            <span className="text-gray">
+              <img src="/img/icons/Icon2.png" alt="Icon2.png" />
+              {t('sidenav.favorites')}
             </span>
           </Link>
         </li>
         <li>
           <Link to="export_orders" onClick={handleLinkClick}>
-            <span className="sub-text">
-              <img src="/img/icons/Icon3.png" alt="Icon3.png" /> طلبات التصدير
+            <span className="text-gray">
+              <img src="/img/icons/Icon3.png" alt="Icon3.png" /> 
+              {t('sidenav.exportRequests')}
             </span>
           </Link>
         </li>
         <li>
           <Link to="branches" onClick={handleLinkClick}>
-            <span className="sub-text">
-              <img src="/img/icons/Icon15.png" alt="Icon3.png" /> فروع الونش
+            <span className="text-gray">
+              <img src="/img/icons/Icon15.png" alt="Icon3.png" /> 
+              {t('sidenav.winchBranches')}
             </span>
           </Link>
         </li>
 
         <li>
           <Link to="vendors" onClick={handleLinkClick}>
-            <span className="sub-text">
-              <img src="/img/icons/Icon5.png" alt="Icon3.png" /> موردين
-              المشتريات
+            <span className="text-gray">
+              <img src="/img/icons/Icon5.png" alt="Icon3.png" />
+              {t('sidenav.purchaseSuppliers')}
             </span>
           </Link>
         </li>
         <li>
           <Link to="clients" onClick={handleLinkClick}>
-            <span className="sub-text">
+            <span className="text-gray">
               <img src="/img/icons/Icon5.png" alt="Icon6.png" />
-               العملاء الأفراد
+               {t('sidenav.individualClients')}
             </span>
           </Link>
         </li>
 
         <li className="dropdown">
           <a
-            className="dropdown-toggle sub-text"
+            className="dropdown-toggle text-gray"
             data-bs-toggle="dropdown"
             role="button"
             aria-expanded="false"
           >
-            <img src="/img/icons/Icon7.png" alt="Icon7.png" /> قطاع الأعمال
+            <img src="/img/icons/Icon7.png" alt="Icon7.png" />
+            {t('sidenav.corporate')}
           </a>
           <ul className="dropdown-menu">
             <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 1
+              <Link to="business_sector" onClick={handleLinkClick} className="dropdown-item">
+                <i className="bi bi-caret-left" style={{marginLeft:"2px"}}></i> 
+                {t('sidenav.businessList')}
               </Link>
             </li>
             <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 2
+              <Link to="business_sector/users" onClick={handleLinkClick} className="dropdown-item">
+              <i className="bi bi-caret-left" style={{marginLeft:"2px"}}></i> 
+                {t('sidenav.businessUsers')}
+              </Link>
+            </li>
+            <li>
+              <Link to="business_sector/official_recieving_docs" onClick={handleLinkClick} className="dropdown-item">
+              <i className="bi bi-caret-left" style={{marginLeft:"2px"}}></i> 
+                {t('sidenav.receivingOfficials')}
+              </Link>
+            </li>
+            <li>
+              <Link to="business_sector/contracts" onClick={handleLinkClick} className="dropdown-item">
+              <i className="bi bi-caret-left" style={{marginLeft:"2px"}}></i> 
+                {t('sidenav.contracts')}
+              </Link>
+            </li>
+            <li>
+              <Link to="business_sector/credit_limit" onClick={handleLinkClick} className="dropdown-item">
+              <i className="bi bi-caret-left" style={{marginLeft:"2px"}}></i> 
+                {t('sidenav.creditLimit')}
+              </Link>
+            </li>
+            <li>
+              <Link to="business_sector/business_docs" onClick={handleLinkClick} className="dropdown-item">
+              <i className="bi bi-caret-left" style={{marginLeft:"2px"}}></i> 
+                {t('sidenav.businessDocs')}
               </Link>
             </li>
           </ul>
         </li>
         <li className="dropdown">
           <a
-            className="dropdown-toggle sub-text"
+            className="dropdown-toggle text-gray"
             data-bs-toggle="dropdown"
             role="button"
             aria-expanded="false"
           >
-            <img src="/img/icons/Icon8.png" alt="Icon8.png" /> شركاء الونش
+            <img src="/img/icons/Icon8.png" alt="Icon8.png" /> 
+            {t('sidenav.tripwayPartners')}
           </a>
           <ul className="dropdown-menu">
             <li>
               <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 1
+                -
               </Link>
             </li>
             <li>
               <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 2
+                -
               </Link>
             </li>
           </ul>
         </li>
         <li className="dropdown">
           <a
-            className="dropdown-toggle sub-text"
+            className="dropdown-toggle text-gray"
             data-bs-toggle="dropdown"
             role="button"
             aria-expanded="false"
           >
-            <img src="/img/icons/Icon9.png" alt="Icon9.png" /> مزودي الخدمة
+            <img src="/img/icons/Icon9.png" alt="Icon9.png" /> 
+            {t('sidenav.serviceProviders')}
           </a>
           <ul className="dropdown-menu">
             <li>
               <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 1
+                -
               </Link>
             </li>
             <li>
               <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 2
+                -
               </Link>
             </li>
           </ul>
         </li>
         <li>
           <Link to="ratings" onClick={handleLinkClick}>
-            <span className="sub-text">
+            <span className="text-gray">
               <img src="/img/icons/Icon10.png" alt="Icon6.png" />
-              التقييمات
+              {t('sidenav.ratings')}
             </span>
           </Link>
         </li>
         <li>
           <Link>
-            <span className="sub-text">
-              <img src="/img/icons/Icon17.png" alt="Icon11.png" /> الحسابات
-              البنكية
+            <span className="text-gray">
+              <img src="/img/icons/Icon17.png" alt="Icon11.png" />
+              {t('sidenav.bankAccounts')}
             </span>
           </Link>
         </li>
         <li>
           <Link>
-            <span className="sub-text">
-              <img src="/img/icons/Icon16.png" alt="Icon12.png" /> السحب
-              والإيداع
+            <span className="text-gray">
+              <img src="/img/icons/Icon16.png" alt="Icon12.png" />
+              {t('sidenav.withdrawDeposit')}
             </span>
           </Link>
         </li>
         <li className="dropdown">
           <a
-            className="dropdown-toggle sub-text"
+            className="dropdown-toggle text-gray"
             data-bs-toggle="dropdown"
             role="button"
             aria-expanded="false"
           >
-            <img src="/img/icons/Icon18.png" alt="Icon13.png" /> طلبات الرحلات
+            <img src="/img/icons/Icon18.png" alt="Icon13.png" /> {t('sidenav.tripRequests')}
           </a>
           <ul className="dropdown-menu">
             <li>
               <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 1
+               -
               </Link>
             </li>
             <li>
               <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                عنصر 2
+                -
               </Link>
             </li>
           </ul>
@@ -202,25 +237,25 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
         {/* Example Static Links */}
         <li>
           <Link to="#" onClick={handleLinkClick}>
-            <span className="sub-text">
-              <img src="/img/icons/Icon18.png" alt="Icon13.png" /> الإيجارات
-              (الرئيسي)
+            <span className="text-gray">
+              <img src="/img/icons/Icon18.png" alt="Icon13.png" />
+              {t('sidenav.mainRentals')}
             </span>
           </Link>
         </li>
         <li>
           <Link to="#" onClick={handleLinkClick}>
-            <span className="sub-text">
-              <img src="/img/icons/Icon18.png" alt="Icon13.png" /> الإيجارات
-              (الأسطول)
+            <span className="text-gray">
+              <img src="/img/icons/Icon18.png" alt="Icon13.png" /> 
+              {t('sidenav.fleetRentals')}
             </span>
           </Link>
         </li>
         <li>
           <Link to="#" onClick={handleLinkClick}>
-            <span className="sub-text">
-              <img src="/img/icons/Icon18.png" alt="Icon13.png" /> الإيجارات
-              (التأجير)
+            <span className="text-gray">
+              <img src="/img/icons/Icon18.png" alt="Icon13.png" />
+              {t('sidenav.leasingRentals')}
             </span>
           </Link>
         </li>

@@ -1,4 +1,4 @@
-.save {background: var(--btn1-color);}
+.save {background-color: var(--green-color) !important;}
 
 .toggle {
   cursor: pointer;

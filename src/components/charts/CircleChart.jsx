@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useTranslation } from 'react-i18next';
 const CircleChart = () => {
+  const {t,i18n} = useTranslation('global');
   return (
     <div className="circle_chart">
       <div className="row">
@@ -8,8 +9,8 @@ const CircleChart = () => {
           <div className="chart-text border-0">
             <div>
               <svg
-                width="60px" // let SVG fill container width
-                height="60px" // keep aspect ratio
+                width="50px" // let SVG fill container width
+                height="50px" // keep aspect ratio
                 viewBox="0 0 42 42"
                 className="pie"
                 aria-labelledby="css-pie-chart"
@@ -20,7 +21,7 @@ const CircleChart = () => {
                   cx="21"
                   cy="21"
                   r="15.91549430918954"
-                  fill="#0F1535"
+                  fill="#fff"
                 />
                 <circle
                   className="donut-ring"
@@ -28,7 +29,7 @@ const CircleChart = () => {
                   cy="21"
                   r="15.91549430918954"
                   fill="transparent"
-                  stroke="#1A203E"
+                  stroke="#ddd"
                   strokeWidth="3"
                 />
                 <circle
@@ -46,7 +47,7 @@ const CircleChart = () => {
               </svg>
             </div>
             <div>
-              <b className="text-lighter">العملاء الأفراد</b>
+              <b className="text-lighter">{t('sidenav.individualClients')}</b>
               <h5 className="text-lighter">65,127</h5>
             </div>
           </div>
@@ -55,8 +56,8 @@ const CircleChart = () => {
           <div className="chart-text">
             <div>
               <svg
-                width="60px" // let SVG fill container width
-                height="60px" // keep aspect ratio
+                width="50px" // let SVG fill container width
+                height="50px" // keep aspect ratio
                 viewBox="0 0 42 42"
                 className="pie"
                 aria-labelledby="css-pie-chart"
@@ -67,7 +68,7 @@ const CircleChart = () => {
                   cx="21"
                   cy="21"
                   r="15.91549430918954"
-                  fill="#0F1535"
+                  fill="#fff"
                 />
                 <circle
                   className="donut-ring"
@@ -75,7 +76,7 @@ const CircleChart = () => {
                   cy="21"
                   r="15.91549430918954"
                   fill="transparent"
-                  stroke="#1A203E"
+                  stroke="#ddd"
                   strokeWidth="3"
                 />
                 <circle
@@ -93,7 +94,7 @@ const CircleChart = () => {
               </svg>
             </div>
             <div>
-              <b className="text-lighter">العملاء الأفراد</b>
+              <b className="text-lighter">{t('sidenav.individualClients')}</b>
               <h5 className="text-lighter">65,127</h5>
             </div>
           </div>
@@ -102,8 +103,8 @@ const CircleChart = () => {
           <div className="chart-text">
             <div>
               <svg
-                width="60px" // let SVG fill container width
-                height="60px" // keep aspect ratio
+                width="50px" // let SVG fill container width
+                height="50px" // keep aspect ratio
                 viewBox="0 0 42 42"
                 className="pie"
                 aria-labelledby="css-pie-chart"
@@ -114,7 +115,7 @@ const CircleChart = () => {
                   cx="21"
                   cy="21"
                   r="15.91549430918954"
-                  fill="#0F1535"
+                  fill="#fff"
                 />
                 <circle
                   className="donut-ring"
@@ -122,7 +123,7 @@ const CircleChart = () => {
                   cy="21"
                   r="15.91549430918954"
                   fill="transparent"
-                  stroke="#1A203E"
+                  stroke="#ddd"
                   strokeWidth="3"
                 />
                 <circle
@@ -140,7 +141,7 @@ const CircleChart = () => {
               </svg>
             </div>
             <div>
-              <b className="text-lighter">العملاء الأفراد</b>
+              <b className="text-lighter">{t('sidenav.individualClients')}</b>
               <h5 className="text-lighter">65,127</h5>
             </div>
           </div>

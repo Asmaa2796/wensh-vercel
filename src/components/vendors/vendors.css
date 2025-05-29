@@ -14,8 +14,8 @@
 .iti__dropdown-content {direction: ltr !important;}
 .iti__country ,.iti__search-input{font-size: 12px;}
 .iti input.iti__tel-input, .iti input.iti__tel-input[type=text], .iti input.iti__tel-input[type=tel] {
-    background-color: #1a2146 !important;
-    color: var(--text-lighter);
+    background-color: #dddddd40 !important;
+    /* color: var(--text-lighter); */
 }
 .iti input.iti__tel-input:focus,
  .iti input.iti__tel-input[type=text]:focus,

@@ -1,41 +1,43 @@
 import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
 import "./clients.css";
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 const Vendors = () => {
+  const {t,i18n} = useTranslation('global');
   const { setTitle } = useTitle();
 
   useEffect(() => {
-    setTitle("العملاء الأفراد");
-  }, [setTitle]);
+    setTitle(t('sidenav.individualClients'));
+  }, [setTitle ,t, i18n.language]);
   return (
     <>
       {/* form */}
       <form className="table_form form-style my-3 py-3">
         <div className="row align-items-center">
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">الاسم</label>
+            <label className="text-light">{t('labels.name')}</label>
             <select name="name">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">البريد الإلكتروني</label>
+            <label className="text-light">{t('labels.email')}</label>
             <input type="email" name="email" />
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">الحالة</label>
+            <label className="text-light">{t('labels.status')}</label>
             <select name="vendor_type">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-6 col-lg-4 col-md-6 col-12">
-            <label className="text-light">تقرير</label>
+            <label className="text-light">{t('labels.report')}</label>
             <input name="report"/>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6 col-12 text-center">
-            <button className="btn show_result">عرض النتائج</button>
-            <button className="btn show_all">عرض الكل</button>
+            <button className="btn show_result">{t('btns.viewResults')}</button>
+            <button className="btn show_all">{t('btns.viewAll')}</button>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-6 col-12 text-center">
             <Link to="add_client">
@@ -43,12 +45,12 @@ const Vendors = () => {
                 className="btn btn-success btn-sm text-sm px-3"
                 style={{
                   background:
-                    "linear-gradient(90deg, #02803D 0%, #2DEC3A 100%)",
+                    "var(--green-color)",
                     marginTop:"45px",
                     fontSize:"14px"
                 }}
               >
-                إضافة
+                {t('btns.add')}
               </span>
             </Link>
           </div>
@@ -63,23 +65,23 @@ const Vendors = () => {
                   #
                 </th>
                 <th scope="col" className="text-lighter">
-                  رقم العميل
+                  {t('labels.clientID')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  اسم
+                  {t('labels.name')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  رقم الجوال
+                  {t('labels.phone')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  الرصيد الحالى
+                  {t('labels.currentBalance')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  التقييم
+                  {t('labels.rating')}
                 </th>
-                <th className="text-lighter">الحالة</th>
-                <th className="text-lighter">طلبات الرحلات</th>
-                <th className="text-lighter">التسجيل</th>
+                <th className="text-lighter">{t('labels.status')}</th>
+                <th className="text-lighter"> {t('sidenav.tripRequests')}</th>
+                <th className="text-lighter">{t('labels.registration')}</th>
                 <th></th>
               </tr>
             </thead>
@@ -91,8 +93,8 @@ const Vendors = () => {
                 <td className="sub-text" style={{direction:"ltr"}}>+966 502103989</td>
                 <td className="sub-text">$ 0</td>
                 <td className="sub-text"><i className="bi bi-star text-warning"></i> 0</td>
-                <td style={{color:"#98EC2D"}}>مفعل </td>
-                <td className="sub-text">لا يوجد </td>
+                <td style={{color:"#7ba946"}}>{t('labels.active')} </td>
+                <td className="sub-text">{t('labels.nothing')} </td>
                 <td className="sub-text" style={{direction:"ltr"}}>21/05/2025 02:52 PM</td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
@@ -109,8 +111,8 @@ const Vendors = () => {
                 <td className="sub-text" style={{direction:"ltr"}}>+966 502103989</td>
                 <td className="sub-text">$ 0</td>
                 <td className="sub-text"><i className="bi bi-star text-warning"></i> 0</td>
-                <td style={{color:"#98EC2D"}}>مفعل </td>
-                <td className="sub-text">لا يوجد </td>
+                <td style={{color:"#7ba946"}}>{t('labels.active')} </td>
+                <td className="sub-text">{t('labels.nothing')} </td>
                 <td className="sub-text" style={{direction:"ltr"}}>21/05/2025 02:52 PM</td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
@@ -127,8 +129,8 @@ const Vendors = () => {
                 <td className="sub-text" style={{direction:"ltr"}}>+966 502103989</td>
                 <td className="sub-text">$ 0</td>
                 <td className="sub-text"><i className="bi bi-star text-warning"></i> 0</td>
-                <td style={{color:"#98EC2D"}}>مفعل </td>
-                <td className="sub-text">لا يوجد </td>
+                <td style={{color:"#7ba946"}}>{t('labels.active')} </td>
+                <td className="sub-text">{t('labels.nothing')} </td>
                 <td className="sub-text" style={{direction:"ltr"}}>21/05/2025 02:52 PM</td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
@@ -145,8 +147,8 @@ const Vendors = () => {
                 <td className="sub-text" style={{direction:"ltr"}}>+966 502103989</td>
                 <td className="sub-text">$ 0</td>
                 <td className="sub-text"><i className="bi bi-star text-warning"></i> 0</td>
-                <td style={{color:"#98EC2D"}}>مفعل </td>
-                <td className="sub-text">لا يوجد </td>
+                <td style={{color:"#7ba946"}}>{t('labels.active')} </td>
+                <td className="sub-text">{t('labels.nothing')} </td>
                 <td className="sub-text" style={{direction:"ltr"}}>21/05/2025 02:52 PM</td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
@@ -163,8 +165,8 @@ const Vendors = () => {
                 <td className="sub-text" style={{direction:"ltr"}}>+966 502103989</td>
                 <td className="sub-text">$ 0</td>
                 <td className="sub-text"><i className="bi bi-star text-warning"></i> 0</td>
-                <td style={{color:"#98EC2D"}}>مفعل </td>
-                <td className="sub-text">لا يوجد </td>
+                <td style={{color:"#7ba946"}}>{t('labels.active')} </td>
+                <td className="sub-text">{t('labels.nothing')} </td>
                 <td className="sub-text" style={{direction:"ltr"}}>21/05/2025 02:52 PM</td>
                 <td className="d-flex justify-content-center">
                   <Link to="">

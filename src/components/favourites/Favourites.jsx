@@ -1,32 +1,34 @@
 import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
 import "./favourites.css";
+import { useTranslation } from 'react-i18next';
 const Favourites = () => {
+  const {t,i18n} = useTranslation('global');
   const { setTitle } = useTitle();
 
   useEffect(() => {
-    setTitle("المفضلة");
-  }, [setTitle]);
+    setTitle(t('sidenav.favorites'));
+  }, [setTitle, t, i18n.language]);
   return (
     <>
       {/* form */}
       <form className="table_form form-style my-3 py-3">
         <div className="row justify-content-center align-items-center">
           <div className="col-xl-4 col-lg-6 col-md-6 col-12">
-            <label className="text-light">رقم المرجع</label>
+            <label className="text-light">{t('labels.referenceNumber')}</label>
             <select name="created_by">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-4 col-lg-6 col-md-6 col-12">
-            <label className="text-light">الحالة</label>
+            <label className="text-light">{t('labels.status')}</label>
             <select name="status">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-4 col-lg-6 col-md-6 col-12 text-center">
-            <button className="btn show_result">عرض النتائج</button>
-            <button className="btn show_all">عرض الكل</button>
+            <button className="btn show_result">{t('btns.viewResults')}</button>
+            <button className="btn show_all"> {t('btns.viewAll')} </button>
           </div>
         </div>
       </form>
@@ -50,16 +52,16 @@ const Favourites = () => {
                   #
                 </th>
                 <th scope="col" className="text-lighter">
-                  اسم
+                  {t('labels.name')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  النوع
+                  {t('labels.type')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  أنشئت بواسطة
+                  {t('labels.createdBy')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  التاريخ
+                  {t('labels.date')}
                 </th>
               </tr>
             </thead>

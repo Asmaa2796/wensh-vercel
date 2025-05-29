@@ -1,57 +1,64 @@
-import React, { Component } from "react";
+import React, { useMemo } from "react";
+import { useTranslation } from 'react-i18next';
 import CanvasJSReact from "@canvasjs/react-charts";
 
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-class App extends Component {
-  render() {
-    const options = {
-      animationEnabled: true,
-      backgroundColor: "#0f1535",
-      title: {
-        text: "",
-        fontColor: "#fff",
+const DoughnutChart = () => {
+  const { t, i18n } = useTranslation('global');
+
+  const inService = 68;
+  const done = 25;
+  const cancelled = 14;
+  const total = inService + done + cancelled;
+
+  const inServicePercent = ((inService / total) * 100).toFixed(0);
+
+  const options = useMemo(() => ({
+    animationEnabled: true,
+    backgroundColor: "#fff",
+    title: {
+      text: "",
+      fontColor: "#0f1535",
+    },
+    subtitles: [
+      {
+        text: `${t('home.totalTripRequests')} ${inServicePercent}%`,
+        verticalAlign: "center",
+        fontSize: 16,
+        fontColor: "#0f1535",
+        fontFamily: "Montserrat, sans-serif",
+        dockInsidePlotArea: true,
+        maxWidth: 150,
+        wrap: true
       },
-      subtitles: [
-        {
-          text: "68% إجمالي طلبات الرحلات",
-          verticalAlign: "center",
-          fontSize: 16,
-          fontColor: "#fff",
-          fontFamily: "Montserrat, sans-serif",
-          dockInsidePlotArea: true,
-          maxWidth: 150, // simulate width control
-          wrap: true
-        },
-      ],
-      data: [
-        {
-          type: "doughnut",
-          radius: "90%", // <-- Add this to enlarge the doughnut size
-          innerRadius: "70%", // optional: controls doughnut hole size
-          showInLegend: false,
-          indexLabelFontColor: "#fff",
+    ],
+    data: [
+      {
+        type: "doughnut",
+        radius: "90%",
+        innerRadius: "70%",
+        showInLegend: false,
+        indexLabelFontColor: "#fff",
+        indexLabel: "",
+        yValueFormatString: "#,###'%'",
+        dataPoints: [
+          { name: t('home.inService'), y: inService, color: "#3494E6" },
+          { name: t('home.done'), y: done, color: "#FF6A00" },
+          { name: t('home.cancelled'), y: cancelled, color: "#17AD37" }
+        ],
+      },
+    ],
+  }), [i18n.language, inServicePercent, t]);
 
-          indexLabel: "", //{name}: {y}
-          yValueFormatString: "#,###'%'",
-          dataPoints: [
-            { name: "تحت الخدمة", y: 68, color: "#3494E6"},
-            { name: "مكتمل", y: 25, color: "#FF6A00" },
-            { name: "ملغي", y: 14, color: "#17AD37" }
-          ],
-        },
-      ],
-    };
+  return (
+    <div style={{ width: "100%", height: "400px" }}>
+      <CanvasJSChart
+        options={options}
+        containerProps={{ width: "100%", height: "100%" }}
+      />
+    </div>
+  );
+};
 
-    return (
-      <div style={{ width: "100%", height: "400px" }}>
-        <CanvasJSChart
-          options={options}
-          containerProps={{ width: "100%", height: "100%" }}
-        />
-      </div>
-    );
-  }
-}
-
-export default App;
+export default DoughnutChart;

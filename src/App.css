@@ -1,10 +1,13 @@
 :root {
   --main-color: #0F1535;
+  --green-color: #006A53;
+  --gray-color: #DDDDDD;
+  --body-color: #EEEEEE;
   --text-color: #0D6EFD;
-  --sub-color: #A7ACB1;
+  --sub-color: #222;
   --basic-color: #fff;
   --highlight-color: #F2205B;
-  --text-lighter: #D3D7DC;
+  --text-lighter: #333;
   --btn1-color: linear-gradient(90deg, #8824C2 0%, #F00488 100%);
   --btn2-color: linear-gradient(90deg, #FF6A00 0%, #F01414 100%);
 }
@@ -38,15 +41,16 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif !important;
   position: relative;
-  direction: rtl;
   text-align: right !important;
-  background-image: url('../public/img/bg.jpg');
-  background-position: right;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: var(--body-color) !important;
 }
 
 /* custom */
+.en-lang {
+  font-family: 'Nunito',sans-serif !important;
+  font-weight: bold !important;
+}
+
 button,
 a {
   cursor: pointer;
@@ -112,8 +116,8 @@ a {
 .b25 {
   border-radius: 25px !important;
 }
-.div-bg {background-color: var(--main-color);}
-.input-bg {background-color: #1a2146 !important;}
+.div-bg {background-color: var(--basic-color);}
+.input-bg {background-color: #dddddd40 !important;}
 select {
   cursor: pointer;
   appearance: none;
@@ -122,7 +126,7 @@ select {
   background-size: 10px 10px;
   border-radius: 5px;
   background-position: left 14px center;
-  color: #ffffff80 !important;
+  /* color: #ffffff80 !important; */
 }
 
 .shadow-sm {
@@ -166,14 +170,14 @@ select {
   display: block;
   margin: 10px 0;
 }
-
+.form-style label.text-light {color: #222 !important;font-weight: bold;}
 .form-style input,
 .form-style select {
   padding: 0px 10px;
   width: 100%;
-  border: 1px solid #ffffff57;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: var(--main-color);
+  background-color: transparent;
   height: 36px;
   margin: 5px 0;
   font-size: 13px;
@@ -181,9 +185,9 @@ select {
 
 .form-style textarea {
   padding: 0px 10px;
-  background-color: #fdfdfd;
+  background-color: transparent;
   width: 100%;
-  border: 1px solid #eee;
+  border: 1px solid #ccc;
   border-radius: 4px;
   margin: 8px 0;
   font-size: 13px;
@@ -191,7 +195,7 @@ select {
 .form-style input,.form-style textarea {color: var(--text-lighter);}
 .form-style input::placeholder,
 .form-style textarea::placeholder {
-  color: #ddd;
+  color: #333;
   font-size: 14px;
 }
 
@@ -204,7 +208,7 @@ select {
 
 /* topnav */
 .topnav {
-  background-color: var(--main-color);
+  background-color: var(--green-color);
   padding-right: 20% !important;
   transition: all .3s ease-in-out;
 }
@@ -254,7 +258,7 @@ button.notification span {
 }
 /* sidenav */
 .sidenav {
-  background-color: var(--main-color);
+  background-color: var(--gray-color);
   width: 250px;
   height: 100%;
   position: fixed;
@@ -272,14 +276,14 @@ button.notification span {
 }
 
 .sidenav .dropdown-menu {
-  background-color: #060B28F0;
+  background-color: #fafafa;
   text-align: right;
   font-size: small;
   padding-block: 7px;
 }
 
 .sidenav .dropdown-toggle::after {
-  left: -20px;
+  left: -10px;
   position: absolute;
   top: 6px;
   content: "";
@@ -293,6 +297,7 @@ button.notification span {
   margin-inline-start: 8px;
   vertical-align: middle;
   border: unset;
+  transition: all .3s ease-in-out;
 }
 
 .sidenav .dropdown-menu a span {
@@ -304,13 +309,13 @@ button.notification span {
 }
 
 .sidenav::-webkit-scrollbar-track {
-  background: #0b102a;
+  background: #ccc;
 }
 
 .sidenav::-webkit-scrollbar-thumb {
   background-color: #eeeeee40;
   border-radius: 20px;
-  border: 1px solid #0b102a;
+  border: 1px solid #ddd;
 }
 
 .sidenav .main-ul {
@@ -329,7 +334,7 @@ button.notification span {
 }
 .sidenav .dropdown-menu li a {color: var(--text-lighter);font-size: 11px;}
 .sidenav .dropdown-menu li {margin-block: 5px;}
-.sidenav .dropdown-menu li a:hover {background-color: var(--text-color);color: var(--basic-color);}
+.sidenav .dropdown-menu li a:hover {background-color: var(--green-color);color: var(--basic-color);}
 .sidenav .dropdown-menu li a {transition: all .3s ease-in-out;}
 .sidenav li a {
   display: block;
@@ -339,8 +344,16 @@ button.notification span {
   width: auto;
   max-height: 20px;
   margin-left: 3px;
+  mix-blend-mode: exclusion;
+  opacity: .7;
 }
-.sidenav li span {display: flex;align-items: center;}
+.sidenav li span {display: flex;align-items: center;font-weight: bold;}
+.sidenav li a.dropdown-toggle {font-weight: bold;}
+.sidenav .dropdown-menu li a {
+    font-size: 12px;
+    font-weight: bold;
+    color: #777;
+}
 /* content wrapper */
 .content_wrapper {
   margin-right: 20%;
@@ -418,7 +431,7 @@ button.notification span {
 }
 /* end media */
 .sidenav {
-  background-color: var(--main-color);
+  background-color: var(--gray-color);
   width: 250px;
   height: 100%;
   position: fixed;
@@ -438,6 +451,115 @@ button.notification span {
 }
 
 .topnav {
-  background-color: var(--main-color);
+  background-color: var(--green-color);
   transition: all 0.3s ease-in-out;
+}
+
+/* ######### [dir ltr] ########## */
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../src/Nunito-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+[dir="ltr"] body {
+  text-align: left;
+  font-family: 'Nunito', sans-serif !important;
+  direction: ltr !important;
+}
+[dir="ltr"] .sidenav li {
+        text-align: left;
+  }
+[dir="ltr"] .sidenav .dropdown-toggle::after {
+  right: -10px;
+  left: unset;
+  margin-inline-start: 0px;
+  margin-inline-end: 8px;
+}
+[dir="ltr"] .sidenav .dropdown-menu li a i::before {
+  transform: rotate(180deg);
+  margin-right: 2px !important;
+  margin-left: 0 !important;
+}
+[dir="ltr"] .sidenav li img {margin-right: 3px;margin-left: 0px;}
+[dir="ltr"] .topnav .dropdown-menu-end[data-bs-popper] {
+    right: 0;
+    left: auto;
+}
+[dir="ltr"] .topnav .dropdown-menu,
+[dir="ltr"] .providers_on_map h5
+ {text-align: left;}
+ [dir="ltr"] .circle_chart b, [dir="ltr"] .circle_chart h5 {
+    margin-left: 5px;
+    margin-right: 0px;
+    text-align: left;
+}
+[dir="ltr"] .topnav .actions li a ,
+[dir="ltr"] .topnav .actions li ul button {font-weight: bold;font-size: 13px;}
+[dir="ltr"] .stat_card,
+[dir="ltr"] .table_form label,
+[dir="ltr"] .table_form select
+ {text-align: left;}
+[dir="ltr"] .stat_card img {
+    transform: scalex(-1);
+}
+[dir="ltr"] .sidenav .dropdown-menu li a {font-size: 12px;}
+[dir="ltr"] select {background-position: right 14px center;}
+[dir="ltr"] .chart-text {font-family: 'Nunito',sans-serif !important;}
+[dir="ltr"] .ar-lang {font-family: 'Montserrat',sans-serif !important;font-weight: normal !important;}
+[dir="ltr"] .chart-text {border-left: 1px solid #eeeeee26;border-right:none}
+[dir="ltr"] .pagination .page-item:first-child .page-link {
+    border-radius: 50%;
+    border-top-right-radius: var(--bs-pagination-border-radius);
+    border-bottom-right-radius: var(--bs-pagination-border-radius);
+}
+[dir="ltr"] .pagination .page-item:last-child .page-link {
+    border-radius: 50%;
+    border-top-left-radius: var(--bs-pagination-border-radius);
+    border-bottom-left-radius: var(--bs-pagination-border-radius);
+}
+[dir="ltr"] .pagination .page-item .page-link i {transform: rotate(180deg);}
+[dir="ltr"] .view,[dir="ltr"] .toggle {text-align: left;}
+[dir="ltr"] .table_form label{font-weight: bold;font-size: 15px;}
+.iti__tel-input {padding-left: 47px !important;padding-right: 0 !important;}
+.iti__country-container {left: 0 !important;right: unset !important;}
+.toggle {float: right;}
+[dir="ltr"] .toggle {float: left;}
+[dir="ltr"] .btn {font-weight: bold;}
+[dir="ltr"] .modal-body ,
+[dir="ltr"] .tab-content 
+{text-align: left;}
+
+/* ####### media [dir="ltr"] ###### */
+@media (min-width: 1191px) {
+  [dir="ltr"] .topnav.with-sidenav {
+    padding-left: 20% !important;
+    padding-right: 0 !important;
+  }
+  [dir="ltr"] .sidenav.openNav {
+        left: 0;
+        right: unset;
+  }
+  [dir="ltr"] .sidenav.closedNav {
+        left: -250px;
+        right: 0;
+    }
+  [dir="ltr"] .content_wrapper.with-sidenav {
+        margin-left: 20%;
+        margin-right: 0 !important;
+    }
+}
+@media (max-width: 1190px) {
+    [dir="ltr"] .sidenav.openNav {
+        left: 0;
+        right: unset;
+    }
+    [dir="ltr"] .sidenav.closedNav {
+        left: -250px;
+        right: unset;
+    }
+    [dir="ltr"] .closeNav {
+        right: 10px;
+        left: unset;
+    }
 }

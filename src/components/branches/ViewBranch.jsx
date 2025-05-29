@@ -1,19 +1,20 @@
 import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
 import "./branches.css";
-import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 const ViewBranch = () => {
+  const {t,i18n} = useTranslation('global');
   const { setTitle } = useTitle();
 
   useEffect(() => {
-    setTitle("فروع الونش > تفاصيل فرع ونش");
-  }, [setTitle]);
+    setTitle(`${t('labels.winchBranches')} > ${t('labels.winchBranchDetails')}`);
+  }, [setTitle, t, i18n.language]);
   return (
     <>
       {/* view */}
       <div className="view">
         <div className="div-bg my-3">
-          <h5 className="text-lighter text-md mb-4">معلومات الفرع</h5>
+          <h5 className="text-lighter text-md mb-4">{t('labels.branchInfo')}</h5>
           <div className="row">
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter">
@@ -21,20 +22,20 @@ const ViewBranch = () => {
                   WB3
                 </span>
                 <span className="d-block text-custom my-1 text-lighter">
-                  ونش (التأجير)
+                  {t('labels.winchRental')}
                 </span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  الحالة :
+                  {t('labels.status')} :
                 </span>
-                <span className="d-block text-custom text-color">مفعل</span>
+                <span className="d-block text-custom text-color">{t('labels.active')}</span>
               </div>
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom my-1 text-lighter">
-                  تاريخ الانشاء :
+                  {t('labels.creationDate')} :
                 </span>
                 <span
                   className="d-block text-custom my-1 text-lighter"
@@ -51,57 +52,57 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  طريقة الدفع :
+                  {t('labels.paymentMethod')} :
                 </span>
-                <span className="d-block text-custom text-lighter">نقدا</span>
+                <span className="d-block text-custom text-lighter">{t('labels.cash')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  غير مفوتر مبيعات ( رحلات ) :
+                  {t('labels.unbilledTripSales')} :
                 </span>
                 <span className="d-block text-custom text-lighter">
-                  0 - <span className="text-color">عرض</span>
-                </span>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-              <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
-                <span className="d-block text-custom text-lighter">
-                  رصيد المسودات ( مشتريات ) :
-                </span>
-                <span className="d-block text-custom text-lighter">
-                  0 - <span className="text-color">عرض</span>
+                  0 - <span className="text-color">{t('labels.view')}</span>
                 </span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  طريقة اصدار الفواتير :
-                </span>
-                <span className="d-block text-xs text-lighter">غير محدد</span>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-              <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
-                <span className="d-block text-custom text-lighter">
-                  غير مفوتر مبيعات ( ايجارات ) :
+                  {t('labels.draftPurchaseBalance')} :
                 </span>
                 <span className="d-block text-custom text-lighter">
-                  0 - <span className="text-color">عرض</span>
+                  0 - <span className="text-color">{t('labels.view')}</span>
                 </span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  الرصيد الاجمالي :
+                 {t('labels.invoiceIssuanceMethod')} :
+                </span>
+                <span className="d-block text-xs text-lighter">{t('labels.undefined')}</span>
+              </div>
+            </div>
+            <div className="col-xl-4 col-lg-4 col-md-6 col-12">
+              <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
+                <span className="d-block text-custom text-lighter">
+                  {t('labels.unbilledRentalSales')} :
+                </span>
+                <span className="d-block text-custom text-lighter">
+                  0 - <span className="text-color">{t('labels.view')}</span>
+                </span>
+              </div>
+            </div>
+            <div className="col-xl-4 col-lg-4 col-md-6 col-12">
+              <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
+                <span className="d-block text-custom text-lighter">
+                  {t('labels.totalBalance')} :
                 </span>
                 <span
                   className="d-block text-custom"
-                  style={{ color: "#98EC2D" }}
+                  style={{ color: "#7ba946" }}
                 >
                   358.821.69
                 </span>
@@ -110,19 +111,19 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  طريقة السداد بعد استلام الفاتورة :
+                  {t('labels.paymentAfterInvoice')} :
                 </span>
-                <span className="d-block text-xs text-lighter">غير محدد</span>
+                <span className="d-block text-xs text-lighter">{t('labels.undefined')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  غير مفوتر مشتريات ( ايجارات ) :
+                  {t('labels.unbilledPurchaseRentals')} :
                 </span>
                 <span
                   className="d-block text-custom"
-                  style={{ color: "#98EC2D" }}
+                  style={{ color: "#7ba946" }}
                 >
                   358.821.69
                 </span>
@@ -131,40 +132,40 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  الرصيد المستحق ( مبيعات ) :
+                  {t('labels.dueSalesBalance')} :
                 </span>
-                <span className="d-block text-xs text-lighter">غير محدد</span>
+                <span className="d-block text-xs text-lighter">{t('labels.undefined')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  الرصيد الحالى :
+                  {t('labels.currentBalance')} :
                 </span>
                 <span className="d-block text-custom">
-                  <span style={{ color: "#98EC2D" }}>358.821.69</span> -{" "}
-                  <span className="text-color">عرض</span>
+                  <span style={{ color: "#7ba946" }}>358.821.69</span> -{" "}
+                  <span className="text-color">{t('labels.view')}</span>
                 </span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  رصيد المسودات ( مبيعات ) :
+                  {t('labels.draftSalesBalance')} :
                 </span>
                 <span className="d-block text-custom text-lighter">
-                  0 - <span className="text-color">عرض</span>
+                  0 - <span className="text-color">{t('labels.view')}</span>
                 </span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                  الرصيد المستحق ( مشتريات ) :
+                  {t('labels.duePurchaseBalance')} :
                 </span>
                 <span
                   className="d-block text-custom"
-                  style={{ color: "#98EC2D" }}
+                  style={{ color: "#7ba946" }}
                 >
                   358.821.69
                 </span>
@@ -173,12 +174,12 @@ const ViewBranch = () => {
           </div>
         </div>
         <div className="div-bg my-3">
-          <h5 className="text-lighter text-md mb-4">طلبات الإيجارات</h5>
+          <h5 className="text-lighter text-md mb-4">{t('labels.rentalRequests')}</h5>
           <div className="row">
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 طلبات الإيجارات
+                {t('labels.rentalRequests')}
                 </span>
                 <span className="d-block text-custom text-lighter">0</span>
               </div>
@@ -186,7 +187,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 مشاريع الإيجارات :
+                 {t('labels.rentalProjects')} :
                 </span>
                 <span className="d-block text-custom text-lighter">1</span>
               </div>
@@ -194,7 +195,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                عقود الإيجارات :
+                {t('labels.rentalContracts')} :
                 </span>
                 <span className="d-block text-custom text-lighter">0</span>
               </div>
@@ -202,60 +203,52 @@ const ViewBranch = () => {
           </div>
         </div>
         <div className="div-bg my-3">
-          <h5 className="text-lighter text-md mb-4">الفواتير</h5>
+          <h5 className="text-lighter text-md mb-4">{t('labels.invoices')}</h5>
           <div className="row">
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 إصدار مشتريات رحلات مجمعة :
+                 {t('labels.issueGroupedTripPurchases')} :
                 </span>
-                <span className="d-block text-custom text-color">إصدار</span>
+                <span className="d-block text-custom text-color">{t('labels.issue')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 إصدار مبيعات إيجارات مجمعة :
+                {t('labels.issueGroupedRentalSales')} :
                 </span>
-                <span className="d-block text-custom text-color">إصدار</span>
+                <span className="d-block text-custom text-color">{t('labels.issue')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                إصدار مشتريات إيجارات مجمعة :
+                {t('labels.issueGroupedRentalPurchases')} :
                 </span>
-                <span className="d-block text-custom text-color">إصدار</span>
+                <span className="d-block text-custom text-color">{t('labels.issue')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                إصدار مبيعات داخلية يدوية :
+                {t('labels.issueManualInternalSales')} :
                 </span>
-                <span className="d-block text-custom text-color">إصدار</span>
+                <span className="d-block text-custom text-color">{t('labels.issue')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                إصدار مشتريات داخلية يدوية :
+                {t('labels.issueManualInternalPurchases')} :
                 </span>
-                <span className="d-block text-custom text-color">إصدار</span>
+                <span className="d-block text-custom text-color">{t('labels.issue')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                إجمالي المبيعات الداخلية :
-                </span>
-                <span className="d-block text-custom text-color">0</span>
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-              <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
-                <span className="d-block text-custom text-lighter">
-                المبيعات الداخلية المستحقة :
+                 {t('labels.totalInternalSales')} :
                 </span>
                 <span className="d-block text-custom text-color">0</span>
               </div>
@@ -263,7 +256,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                المبيعات الداخلية الغير المستحقة :
+                {t('labels.dueInternalSales')} :
                 </span>
                 <span className="d-block text-custom text-color">0</span>
               </div>
@@ -271,7 +264,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                المبيعات الداخلية المسودة :
+                {t('labels.undueInternalSales')} :
                 </span>
                 <span className="d-block text-custom text-color">0</span>
               </div>
@@ -279,7 +272,15 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                إجمالي المشتريات الداخلية :
+                {t('labels.draftInternalSales')} :
+                </span>
+                <span className="d-block text-custom text-color">0</span>
+              </div>
+            </div>
+            <div className="col-xl-4 col-lg-4 col-md-6 col-12">
+              <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
+                <span className="d-block text-custom text-lighter">
+                {t('labels.totalInternalPurchases')} :
                 </span>
                 <span className="d-block text-custom text-color">1</span>
               </div>
@@ -287,7 +288,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                المشتريات الداخلية المستحقة :
+                {t('labels.dueInternalPurchases')} :
                 </span>
                 <span className="d-block text-custom text-color">1</span>
               </div>
@@ -295,7 +296,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                المشتريات الداخلية الغير المستحقة :
+                {t('labels.undueInternalPurchases')} :
                 </span>
                 <span className="d-block text-custom text-color">0</span>
               </div>
@@ -303,7 +304,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                المشتريات الداخلية المسودة :
+                {t('labels.draftInternalPurchases')} :
                 </span>
                 <span className="d-block text-custom text-color">0</span>
               </div>
@@ -311,28 +312,28 @@ const ViewBranch = () => {
           </div>
         </div>
         <div className="div-bg my-3">
-          <h5 className="text-lighter text-md mb-4">سندات داخلية</h5>
+          <h5 className="text-lighter text-md mb-4">{t('labels.internalVouchers')}</h5>
           <div className="row">
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 إصدار سند قبض :
+                 {t('labels.issueReceiptVoucher')} :
                 </span>
-                <span className="d-block text-custom text-color">إصدار</span>
+                <span className="d-block text-custom text-color">{t('labels.issue')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 إصدار سند صرف :
+                 {t('labels.issuePaymentVoucher')} :
                 </span>
-                <span className="d-block text-custom text-color">إصدار</span>
+                <span className="d-block text-custom text-color">{t('labels.issue')}</span>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 سندات القبض :
+                 {t('labels.receiptVouchers')} :
                 </span>
                 <span className="d-block text-custom text-lighter">0</span>
               </div>
@@ -340,7 +341,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 سندات الصرف :
+                 {t('labels.paymentVouchers')} :
                 </span>
                 <span className="d-block text-custom text-lighter">1</span>
               </div>
@@ -348,12 +349,12 @@ const ViewBranch = () => {
           </div>
         </div>
         <div className="div-bg my-3">
-          <h5 className="text-lighter text-md mb-4">تقارير محاسبية</h5>
+          <h5 className="text-lighter text-md mb-4">{t('labels.accountingReports')}</h5>
           <div className="row">
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 إصدار كشف حساب عميل :
+                 {t('labels.issueClientStatement')} :
                 </span>
                 <span className="d-block text-custom text-lighter">0</span>
               </div>
@@ -361,7 +362,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 إصدار كشف حساب إداري :
+                 {t('labels.issueAdminStatement')} :
                 </span>
                 <span className="d-block text-custom text-lighter">1</span>
               </div>
@@ -369,7 +370,7 @@ const ViewBranch = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-12">
               <div className="input-bg my-2 px-3 py-2 rounded border-lighter d-flex justify-content-between align-items-center">
                 <span className="d-block text-custom text-lighter">
-                 رصيد العميل :
+                 {t('labels.clientBalance')} :
                 </span>
                 <span className="d-block text-custom text-lighter">0</span>
               </div>

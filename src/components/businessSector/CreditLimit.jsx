@@ -1,62 +1,35 @@
 import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
-import "./vendors.css";
-import { Link } from "react-router-dom";
+import "./businessSector.css";
 import { useTranslation } from 'react-i18next';
-const Vendors = () => {
+import { Link } from "react-router-dom";
+const CreditLimit = () => {
   const {t,i18n} = useTranslation('global');
   const { setTitle } = useTitle();
 
-  useEffect(() => {
-    setTitle(t('sidenav.purchaseSuppliers'));
-  }, [setTitle, t, i18n.language]);
+ useEffect(() => {
+         setTitle(t('labels.creditLimit'));
+   }, [setTitle ,t, i18n.language]);
   return (
     <>
       {/* form */}
       <form className="table_form form-style my-3 py-3">
-        <div className="row align-items-center">
-          <div className="col-xl-9 col-lg-9 col-md-12 col-12">
-            <label className="text-light">{t('labels.name')}</label>
-            <select name="name">
-              <option value="">{t('labels.selectItem')}</option>
-            </select>
+        <div className="row justify-content-center align-items-center">
+          <div className="col-xl-3 col-lg-3 col-md-6 col-12">
+            <label className="text-light"> {t('labels.name')}</label>
+            <input name="username" className="w-100 input-div" />
           </div>
           <div className="col-xl-3 col-lg-3 col-md-6 col-12">
-            <label className="text-light">{t('labels.status')}</label>
-            <select name="status">
-              <option value="">{t('labels.selectItem')}</option>
-            </select>
+            <label className="text-light"> {t('labels.totalPrice')}</label>
+            <input name="total_price" className="w-100 input-div" />
           </div>
           <div className="col-xl-3 col-lg-3 col-md-6 col-12">
-            <label className="text-light">{t('labels.supplierType')}</label>
-            <select name="vendor_type">
-              <option value="">{t('labels.selectItem')}</option>
-            </select>
+            <label className="text-light"> {t('labels.report')}</label>
+            <input name="report" className="w-100 input-div" />
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-12">
-            <label className="text-light">{t('labels.report')}</label>
-            <select name="report">
-              <option value="">{t('labels.selectItem')}</option>
-            </select>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-12 text-center">
+          <div className="col-xl-3 col-lg-3 col-md-6 col-12 text-center">
             <button className="btn show_result">{t('btns.viewResults')}</button>
             <button className="btn show_all">{t('btns.viewAll')}</button>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-12 text-center">
-            <Link to="add_vendor">
-              <span
-                className="btn btn-success btn-sm text-sm px-3"
-                style={{
-                  background:
-                    "var(--green-color)",
-                    marginTop:"45px",
-                    fontSize:"14px"
-                }}
-              >
-               {t('btns.addPurchaseSupplier')}
-              </span>
-            </Link>
           </div>
         </div>
       </form>
@@ -69,22 +42,22 @@ const Vendors = () => {
                   #
                 </th>
                 <th scope="col" className="text-lighter">
-                  {t('labels.supplierType')}
+                 {t('labels.clientID')}
                 </th>
                 <th scope="col" className="text-lighter">
                   {t('labels.name')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  {t('labels.phone')}
+                 {t('labels.currentBalance')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  {t('labels.type')}
+                  {t('labels.creditLimit')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  {t('labels.status')}
+                 {t('labels.creditLimitExceeded')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  {t('labels.registrationDate')}
+                  {t('labels.exceedDate')}
                 </th>
                 <th></th>
               </tr>
@@ -92,12 +65,14 @@ const Vendors = () => {
             <tbody>
               <tr>
                 <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
-                <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
+                <td className="sub-text">10001666</td>
+                <td className="text-color">Temp User</td>
+                <td className="sub-text">$ 0</td>
+                <td className="sub-text">$ 100.00</td>
+                <td className="sub-text">{t('labels.nothing')}</td>
+                <td className="sub-text" style={{direction:"ltr"}}>
+                    06/04/2025 02:09 PM
+                </td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
                     <span className="text-lighter px-1 mx-1 mb-0">
@@ -113,12 +88,14 @@ const Vendors = () => {
               </tr>
               <tr>
                 <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
-                <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
+                <td className="sub-text">10001666</td>
+                <td className="text-color">Temp User</td>
+                <td className="sub-text">$ 0</td>
+                <td className="sub-text">$ 100.00</td>
+                <td className="sub-text">{t('labels.nothing')}</td>
+                <td className="sub-text" style={{direction:"ltr"}}>
+                    06/04/2025 02:09 PM
+                </td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
                     <span className="text-lighter px-1 mx-1 mb-0">
@@ -134,12 +111,14 @@ const Vendors = () => {
               </tr>
               <tr>
                 <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
-                <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
+                <td className="sub-text">10001666</td>
+                <td className="text-color">Temp User</td>
+                <td className="sub-text">$ 0</td>
+                <td className="sub-text">$ 100.00</td>
+                <td className="sub-text">{t('labels.nothing')}</td>
+                <td className="sub-text" style={{direction:"ltr"}}>
+                    06/04/2025 02:09 PM
+                </td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
                     <span className="text-lighter px-1 mx-1 mb-0">
@@ -155,12 +134,14 @@ const Vendors = () => {
               </tr>
               <tr>
                 <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
-                <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
+                <td className="sub-text">10001666</td>
+                <td className="text-color">Temp User</td>
+                <td className="sub-text">$ 0</td>
+                <td className="sub-text">$ 100.00</td>
+                <td className="sub-text">{t('labels.nothing')}</td>
+                <td className="sub-text" style={{direction:"ltr"}}>
+                    06/04/2025 02:09 PM
+                </td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
                     <span className="text-lighter px-1 mx-1 mb-0">
@@ -176,12 +157,14 @@ const Vendors = () => {
               </tr>
               <tr>
                 <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
-                <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
+                <td className="sub-text">10001666</td>
+                <td className="text-color">Temp User</td>
+                <td className="sub-text">$ 0</td>
+                <td className="sub-text">$ 100.00</td>
+                <td className="sub-text">{t('labels.nothing')}</td>
+                <td className="sub-text" style={{direction:"ltr"}}>
+                    06/04/2025 02:09 PM
+                </td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
                     <span className="text-lighter px-1 mx-1 mb-0">
@@ -238,4 +221,4 @@ const Vendors = () => {
   );
 };
 
-export default Vendors;
+export default CreditLimit;

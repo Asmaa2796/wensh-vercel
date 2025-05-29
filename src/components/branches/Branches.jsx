@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
 import "./branches.css";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 const Branches = () => {
+  const {t,i18n} = useTranslation('global');
   const { setTitle } = useTitle();
 
   useEffect(() => {
-    setTitle("فروع الونش");
+    setTitle(t('sidenav.winchBranches'));
   }, [setTitle]);
   return (
     <>
@@ -14,20 +16,20 @@ const Branches = () => {
       <form className="table_form form-style my-3 py-3">
         <div className="row justify-content-center align-items-center">
           <div className="col-xl-4 col-lg-6 col-md-6 col-12">
-            <label className="text-light">الحالة</label>
+            <label className="text-light">{t('labels.status')}</label>
             <select name="status">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-4 col-lg-6 col-md-6 col-12">
-            <label className="text-light">تقرير</label>
+            <label className="text-light">{t('labels.report')}</label>
             <select name="report">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-4 col-lg-6 col-md-6 col-12 text-center">
-            <button className="btn show_result">عرض النتائج</button>
-            <button className="btn show_all">عرض الكل</button>
+            <button className="btn show_result">{t('btns.viewResults')}</button>
+            <button className="btn show_all">{t('btns.viewAll')}</button>
           </div>
         </div>
       </form>
@@ -40,17 +42,16 @@ const Branches = () => {
                   #
                 </th>
                 <th scope="col" className="text-lighter">
-                  رقم الفرع
+                  {t('labels.branchNumber')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  اسم
+                  {t('labels.name')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  الحالة
+                  {t('labels.status')}
                 </th>
-
                 <th scope="col" className="text-lighter">
-                  تاريخ التسجيل
+                  {t('labels.registrationDate')}
                 </th>
                 <th></th>
               </tr>
@@ -60,7 +61,7 @@ const Branches = () => {
                 <td className="sub-text">12</td>
                 <td className="sub-text">WB3</td>
                 <td className="sub-text">ونش (التأجير)</td>
-                <td className="text-color">مفعل</td>
+                <td className="text-color">{t('labels.active')}</td>
                 <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
                 <td className="d-flex justify-content-center">
                   <Link to={`view_branch/1`}>
@@ -79,7 +80,7 @@ const Branches = () => {
                 <td className="sub-text">12</td>
                 <td className="sub-text">WB3</td>
                 <td className="sub-text">ونش (التأجير)</td>
-                <td className="highlight-text">غير مفعل</td>
+                <td className="highlight-text">{t('labels.inactive')}</td>
                 <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
                 <td className="d-flex justify-content-center">
                   <Link to={`view_branch/1`}>
@@ -98,7 +99,7 @@ const Branches = () => {
                 <td className="sub-text">12</td>
                 <td className="sub-text">WB3</td>
                 <td className="sub-text">ونش (التأجير)</td>
-                <td className="text-color">مفعل</td>
+                <td className="text-color">{t('labels.active')}</td>
                 <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
                 <td className="d-flex justify-content-center">
                   <Link to={`view_branch/1`}>
@@ -117,7 +118,7 @@ const Branches = () => {
                 <td className="sub-text">12</td>
                 <td className="sub-text">WB3</td>
                 <td className="sub-text">ونش (التأجير)</td>
-                <td className="highlight-text">غير مفعل</td>
+                <td className="highlight-text">{t('labels.inactive')}</td>
                 <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
                 <td className="d-flex justify-content-center">
                   <Link to={`view_branch/1`}>
@@ -136,7 +137,7 @@ const Branches = () => {
                 <td className="sub-text">12</td>
                 <td className="sub-text">WB3</td>
                 <td className="sub-text">ونش (التأجير)</td>
-                <td className="text-color">مفعل</td>
+                <td className="text-color">{t('labels.active')}</td>
                 <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
                 <td className="d-flex justify-content-center">
                   <Link to={`view_branch/1`}>

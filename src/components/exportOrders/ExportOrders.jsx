@@ -1,62 +1,64 @@
 import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
 import './exportOrders.css';
+import { useTranslation } from 'react-i18next';
 const ExportOrders = () => {
+  const {t,i18n} = useTranslation('global');
   const { setTitle } = useTitle();
   
     useEffect(() => {
-      setTitle("طلبات التصدير");
-    }, [setTitle]);
+      setTitle(t('sidenav.exportRequests'));
+    }, [setTitle, t, i18n.language]);
   return (
     <>
       {/* form */}
       <form className="table_form form-style my-3 py-3">
         <div className="row justify-content-center align-items-center">
           <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-            <label className="text-light">أنشئت بواسطة</label>
+            <label className="text-light">{t('labels.createdBy')}</label>
             <select name="created_by">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-            <label className="text-light">رقم الطلب</label>
+            <label className="text-light">{t('labels.orderNumber')}</label>
             <select name="order_number">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-            <label className="text-light">نوع العميل</label>
+            <label className="text-light">{t('labels.clientType')}</label>
             <select name="client_type">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-            <label className="text-light">النوع</label>
+            <label className="text-light">{t('labels.type')}</label>
             <select name="type">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-            <label className="text-light">اللغة</label>
+            <label className="text-light">{t('labels.language')}</label>
             <select name="lang">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-            <label className="text-light">نوع الملف</label>
+            <label className="text-light">{t('labels.fileType')}</label>
             <select name="file_type">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-            <label className="text-light">الحالة</label>
+            <label className="text-light">{t('labels.status')}</label>
             <select name="status">
-              <option value="">حدد عنصر</option>
+              <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
           <div className="col-xl-3 col-lg-6 col-md-6 col-12 text-center">
-            <button className="btn show_result">عرض النتائج</button>
-            <button className="btn show_all">عرض الكل</button>
+            <button className="btn show_result">{t('btns.viewResults')}</button>
+            <button className="btn show_all">{t('btns.viewAll')}</button>
           </div>
         </div>
       </form>
@@ -69,34 +71,34 @@ const ExportOrders = () => {
                   #
                 </th>
                 <th scope="col" className="text-lighter">
-                  رقم الطلب
+                  {t('labels.referenceNumber')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  اسم
+                  {t('labels.name')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  نوع الرحلات
+                 {t('labels.tripType')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  نوع الملف
+                  {t('labels.fileType')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  اللغة
+                  {t('labels.language')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  الحالة
+                  {t('labels.status')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  من تاريخ
+                  {t('labels.fromDate')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  إلى تاريخ
+                  {t('labels.toDate')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  تاريخ الانتهاء
+                  {t('labels.expirationDate')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  أنشئت بواسطة
+                  {t('labels.createdBy')}
                 </th>
               </tr>
             </thead>
@@ -112,13 +114,13 @@ const ExportOrders = () => {
                 <td className="sub-text">Excel</td>
                 <td className="sub-text">English</td>
                 <td>
-                  <b className="text-color d-block">مكتمل</b>
+                  <b className="text-color d-block">{t('home.done')}</b>
                 </td>
                 <td className="sub-text">01/05/2025</td>
                 <td className="sub-text">14/05/2025</td>
                 <td>
                   <span className="sub-text">18/06/2025</span>
-                  <b className="highlight-text d-block">متبقي 28 يوم</b>
+                  <b className="highlight-text d-block">{t('labels.remaining')} 28 {t('labels.day')}</b>
                 </td>
                 <td>
                   <b className="text-color">احمد ابراهيم بيومي </b>
@@ -135,13 +137,13 @@ const ExportOrders = () => {
                 <td className="sub-text">Excel</td>
                 <td className="sub-text">English</td>
                 <td>
-                  <b className="text-color d-block">مكتمل</b>
+                  <b className="text-color d-block">{t('home.done')}</b>
                 </td>
                 <td className="sub-text">01/05/2025</td>
                 <td className="sub-text">14/05/2025</td>
                 <td>
                   <span className="sub-text">18/06/2025</span>
-                  <b className="highlight-text d-block">متبقي 28 يوم</b>
+                  <b className="highlight-text d-block">{t('labels.remaining')} 28 {t('labels.day')}</b>
                 </td>
                 <td>
                   <b className="text-color">احمد ابراهيم بيومي </b>
@@ -158,13 +160,13 @@ const ExportOrders = () => {
                 <td className="sub-text">Excel</td>
                 <td className="sub-text">English</td>
                 <td>
-                  <b className="text-color d-block">مكتمل</b>
+                  <b className="text-color d-block">{t('home.done')}</b>
                 </td>
                 <td className="sub-text">01/05/2025</td>
                 <td className="sub-text">14/05/2025</td>
                 <td>
                   <span className="sub-text">18/06/2025</span>
-                  <b className="highlight-text d-block">متبقي 28 يوم</b>
+                  <b className="highlight-text d-block">{t('labels.remaining')} 28 {t('labels.day')}</b>
                 </td>
                 <td>
                   <b className="text-color">احمد ابراهيم بيومي </b>
@@ -181,13 +183,13 @@ const ExportOrders = () => {
                 <td className="sub-text">Excel</td>
                 <td className="sub-text">English</td>
                 <td>
-                  <b className="text-color d-block">مكتمل</b>
+                  <b className="text-color d-block">{t('home.done')}</b>
                 </td>
                 <td className="sub-text">01/05/2025</td>
                 <td className="sub-text">14/05/2025</td>
                 <td>
                   <span className="sub-text">18/06/2025</span>
-                  <b className="highlight-text d-block">متبقي 28 يوم</b>
+                  <b className="highlight-text d-block">{t('labels.remaining')} 28 {t('labels.day')}</b>
                 </td>
                 <td>
                   <b className="text-color">احمد ابراهيم بيومي </b>
@@ -204,13 +206,13 @@ const ExportOrders = () => {
                 <td className="sub-text">Excel</td>
                 <td className="sub-text">English</td>
                 <td>
-                  <b className="text-color d-block">مكتمل</b>
+                  <b className="text-color d-block">{t('home.done')}</b>
                 </td>
                 <td className="sub-text">01/05/2025</td>
                 <td className="sub-text">14/05/2025</td>
                 <td>
                   <span className="sub-text">18/06/2025</span>
-                  <b className="highlight-text d-block">متبقي 28 يوم</b>
+                  <b className="highlight-text d-block">{t('labels.remaining')} 28 {t('labels.day')}</b>
                 </td>
                 <td>
                   <b className="text-color">احمد ابراهيم بيومي </b>

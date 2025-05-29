@@ -1,62 +1,51 @@
 import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
-import "./vendors.css";
-import { Link } from "react-router-dom";
+import "./businessSector.css";
 import { useTranslation } from 'react-i18next';
-const Vendors = () => {
+import { Link } from "react-router-dom";
+const BusinessSectorUsers = () => {
   const {t,i18n} = useTranslation('global');
   const { setTitle } = useTitle();
 
-  useEffect(() => {
-    setTitle(t('sidenav.purchaseSuppliers'));
-  }, [setTitle, t, i18n.language]);
+   useEffect(() => {
+          setTitle(t('sidenav.businessUsers'));
+    }, [setTitle ,t, i18n.language]);
   return (
     <>
       {/* form */}
       <form className="table_form form-style my-3 py-3">
-        <div className="row align-items-center">
-          <div className="col-xl-9 col-lg-9 col-md-12 col-12">
-            <label className="text-light">{t('labels.name')}</label>
-            <select name="name">
+        <div className="row justify-content-center align-items-center">
+          <div className="col-xl-4 col-lg-4 col-md-6 col-12">
+            <label className="text-light"> {t('labels.user')} </label>
+            <select name="username">
               <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div className="col-xl-4 col-lg-4 col-md-6 col-12">
+            <label className="text-light">{t('labels.email')}</label>
+            <input name="email" className="input-div" />
+          </div>
+          <div className="col-xl-4 col-lg-4 col-md-6 col-12">
+            <label className="text-light">{t('labels.companyUser')}</label>
+            <select name="company_user">
+              <option value="">{t('labels.selectItem')}</option>
+            </select>
+          </div>
+          <div className="col-xl-4 col-lg-4 col-md-6 col-12">
             <label className="text-light">{t('labels.status')}</label>
             <select name="status">
               <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-6 col-12">
-            <label className="text-light">{t('labels.supplierType')}</label>
-            <select name="vendor_type">
-              <option value="">{t('labels.selectItem')}</option>
-            </select>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-12">
+          <div className="col-xl-4 col-lg-4 col-md-6 col-12">
             <label className="text-light">{t('labels.report')}</label>
             <select name="report">
               <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-12 text-center">
+          <div className="col-xl-4 col-lg-4 col-md-6 col-12 text-center">
             <button className="btn show_result">{t('btns.viewResults')}</button>
             <button className="btn show_all">{t('btns.viewAll')}</button>
-          </div>
-          <div className="col-xl-3 col-lg-3 col-md-4 col-12 text-center">
-            <Link to="add_vendor">
-              <span
-                className="btn btn-success btn-sm text-sm px-3"
-                style={{
-                  background:
-                    "var(--green-color)",
-                    marginTop:"45px",
-                    fontSize:"14px"
-                }}
-              >
-               {t('btns.addPurchaseSupplier')}
-              </span>
-            </Link>
           </div>
         </div>
       </form>
@@ -69,35 +58,47 @@ const Vendors = () => {
                   #
                 </th>
                 <th scope="col" className="text-lighter">
-                  {t('labels.supplierType')}
+                 {t('labels.clientID')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  {t('labels.name')}
+                  {t('labels.businessSector')}
+                </th>
+                <th scope="col" className="text-lighter">
+                 {t('labels.name')}
                 </th>
                 <th scope="col" className="text-lighter">
                   {t('labels.phone')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  {t('labels.type')}
+                  {t('labels.email')}
                 </th>
                 <th scope="col" className="text-lighter">
                   {t('labels.status')}
                 </th>
                 <th scope="col" className="text-lighter">
-                  {t('labels.registrationDate')}
+                  {t('labels.permission')}
                 </th>
-                <th></th>
+                <th scope="col" className="text-lighter">
+                  {t('labels.createdAt')}
+                </th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
+                <td className="sub-text">U953</td>
+                <td className="sub-text">Temp User</td>
+                <td className="text-color">Temp User</td>
+                <td className="sub-text" style={{ direction: "ltr" }}>
+                  +966 565925299
+                </td>
+                <td className="sub-text">aaa@gmail.com</td>
                 <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
+                <td className="sub-text">Admin</td>
+                <td className="sub-text" style={{ direction: "ltr" }}>
+                  03:39 PM 02/01/2025{" "}
+                </td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
                     <span className="text-lighter px-1 mx-1 mb-0">
@@ -113,12 +114,18 @@ const Vendors = () => {
               </tr>
               <tr>
                 <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
-                <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
+                <td className="sub-text">U953</td>
+                <td className="sub-text">Temp User</td>
+                <td className="text-color">Temp User</td>
+                <td className="sub-text" style={{ direction: "ltr" }}>
+                  +966 565925299
+                </td>
+                <td className="sub-text">aaa@gmail.com</td>
+                <td className="highlight-text">{t('labels.inactive')}</td>
+                <td className="sub-text">Admin</td>
+                <td className="sub-text" style={{ direction: "ltr" }}>
+                  03:39 PM 02/01/2025{" "}
+                </td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
                     <span className="text-lighter px-1 mx-1 mb-0">
@@ -134,12 +141,18 @@ const Vendors = () => {
               </tr>
               <tr>
                 <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
+                <td className="sub-text">U953</td>
+                <td className="sub-text">Temp User</td>
+                <td className="text-color">Temp User</td>
+                <td className="sub-text" style={{ direction: "ltr" }}>
+                  +966 565925299
+                </td>
+                <td className="sub-text">aaa@gmail.com</td>
                 <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
+                <td className="sub-text">Admin</td>
+                <td className="sub-text" style={{ direction: "ltr" }}>
+                  03:39 PM 02/01/2025{" "}
+                </td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
                     <span className="text-lighter px-1 mx-1 mb-0">
@@ -155,33 +168,18 @@ const Vendors = () => {
               </tr>
               <tr>
                 <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
-                <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
-                <td className="d-flex justify-content-center">
-                  <Link to="">
-                    <span className="text-lighter px-1 mx-1 mb-0">
-                      <i className="bi bi-eye"></i>
-                    </span>
-                  </Link>
-                  <Link to="">
-                    <span className="text-color px-1 mx-1 mb-0">
-                      <i className="bi bi-pen"></i>
-                    </span>
-                  </Link>
+                <td className="sub-text">U953</td>
+                <td className="sub-text">Temp User</td>
+                <td className="text-color">Temp User</td>
+                <td className="sub-text" style={{ direction: "ltr" }}>
+                  +966 565925299
                 </td>
-              </tr>
-              <tr>
-                <td className="sub-text">12</td>
-                <td className="sub-text">PS43</td>
-                <td className="sub-text">ونش (التأجير)</td>
-                <td className="sub-text" style={{direction:"ltr"}}>+966 565925299</td>
-                <td className="sub-text">مشتريات</td>
-                <td className="text-color">{t('labels.active')}</td>
-                <td className="sub-text" style={{direction:"ltr"}}>03:39 PM 02/01/2025 </td>
+                <td className="sub-text">aaa@gmail.com</td>
+                <td className="highlight-text">{t('labels.inactive')}</td>
+                <td className="sub-text">Admin</td>
+                <td className="sub-text" style={{ direction: "ltr" }}>
+                  03:39 PM 02/01/2025{" "}
+                </td>
                 <td className="d-flex justify-content-center">
                   <Link to="">
                     <span className="text-lighter px-1 mx-1 mb-0">
@@ -238,4 +236,4 @@ const Vendors = () => {
   );
 };
 
-export default Vendors;
+export default BusinessSectorUsers;
