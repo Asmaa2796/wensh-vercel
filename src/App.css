@@ -530,6 +530,12 @@ button.notification span {
 [dir="ltr"] .tab-content 
 {text-align: left;}
 
+@media (max-width: 500px) {
+    [dir="rtl "].topnav .dropdown-menu-end[data-bs-popper] {
+        right: auto;
+        left: 0;
+    }
+}
 /* ####### media [dir="ltr"] ###### */
 @media (min-width: 1191px) {
   [dir="ltr"] .topnav.with-sidenav {
