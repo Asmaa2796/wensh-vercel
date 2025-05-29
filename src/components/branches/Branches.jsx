@@ -9,7 +9,7 @@ const Branches = () => {
 
   useEffect(() => {
     setTitle(t('sidenav.winchBranches'));
-  }, [setTitle]);
+  }, [setTitle, t, i18n.language]);
   return (
     <>
       {/* form */}

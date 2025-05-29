@@ -10,7 +10,7 @@ const Home = () => {
   const { setTitle } = useTitle();
   useEffect(() => {
     setTitle(t('sidenav.home'));
-  }, [setTitle]);
+  }, [setTitle, t, i18n.language]);
   return (
     <div className="main_content">
       <div className="row justify-content-center">
