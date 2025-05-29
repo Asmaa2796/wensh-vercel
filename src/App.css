@@ -531,9 +531,9 @@ button.notification span {
 {text-align: left;}
 
 @media (max-width: 500px) {
-    [dir="rtl "].topnav .dropdown-menu-end[data-bs-popper] {
-        right: auto;
-        left: 0;
+    [dir="rtl "] .topnav .dropdown-menu-end[data-bs-popper] {
+        right: auto !important;
+        left: 0 !important;
     }
 }
 /* ####### media [dir="ltr"] ###### */
