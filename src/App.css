@@ -362,12 +362,12 @@ button.notification span {
   transition: all .3s ease-in-out;
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .topnav .dropdown-menu-end[data-bs-popper] {
     right: 0;
     left: auto;
 }
-}
+} */
 @media (min-width: 1191px) {
   .sidenav.openNav {
     right: 0;
