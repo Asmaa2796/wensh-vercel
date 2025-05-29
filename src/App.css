@@ -420,7 +420,7 @@ button.notification span {
 
   .closeNav {
     display: block;
-    color: #fff;
+    color: var(--sub-color);
     position: absolute;
     left: 10px;
     top: 10px;

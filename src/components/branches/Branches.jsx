@@ -162,7 +162,7 @@ const Branches = () => {
           <li className="page-item disabled">
             <a
               className="page-link"
-              href="#"
+              href=""
               tabIndex="-1"
               aria-disabled="true"
             >
