@@ -429,6 +429,10 @@ button.notification span {
   }
   
 }
+@media(max-width:410px) 
+{
+  .navbar>.container {flex-wrap: nowrap !important;}
+}
 /* end media */
 .sidenav {
   background-color: var(--gray-color);
@@ -453,8 +457,10 @@ button.notification span {
 .topnav {
   background-color: var(--green-color);
   transition: all 0.3s ease-in-out;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
-
+.fixed-top {padding-top: 10px !important;padding-bottom: 10px !important;}
 /* ######### [dir ltr] ########## */
 
 @font-face {
@@ -529,7 +535,7 @@ button.notification span {
 [dir="ltr"] .modal-body ,
 [dir="ltr"] .tab-content 
 {text-align: left;}
-
+[dir="ltr"] .custom-radio {margin-right: 0 !important;margin-left: 10px !important;}
 @media (max-width: 500px) {
     [dir="rtl "] .topnav .dropdown-menu-end[data-bs-popper] {
         right: auto !important;

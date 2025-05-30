@@ -1,25 +1,45 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTitle } from "../context/TitleContext";
 import { useTranslation } from "react-i18next";
+
 const Navbar = ({ toggleSideNav, isSideNavOpen }) => {
   const { t, i18n } = useTranslation("global");
-
   const { title } = useTitle();
+  const [isMobileScrolled, setIsMobileScrolled] = useState(false);
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
   }, [i18n.language]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isMobile = window.innerWidth <= 768;
+      const scrolled = window.scrollY >= 100;
+      setIsMobileScrolled(isMobile && scrolled);
+    };
+
+    // Run once on mount
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
+
   return (
     <div
-      className={`navbar topnav border-bottom py-3 ${
+      className={`navbar topnav border-bottom ${
         isSideNavOpen ? "with-sidenav" : "full-width"
-      }`}
+      } ${isMobileScrolled ? "fixed-top" : ""}`}
     >
       <div className="container d-flex justify-between align-items-center">
         <div className="toggle_sidenav d-flex align-items-center gap-2">
@@ -96,12 +116,12 @@ const Navbar = ({ toggleSideNav, isSideNavOpen }) => {
             <ul className="dropdown-menu dropdown-menu-end">
               <li>
                 <Link to="#" className="dropdown-item">
-                  {t('topnav.profile')}
+                  {t("topnav.profile")}
                 </Link>
               </li>
               <li>
                 <Link to="#" className="dropdown-item">
-                  {t('topnav.logout')}
+                  {t("topnav.logout")}
                 </Link>
               </li>
             </ul>
