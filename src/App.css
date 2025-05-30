@@ -460,7 +460,7 @@ button.notification span {
   padding-top: 16px;
   padding-bottom: 16px;
 }
-.fixed-top {padding-top: 10px !important;padding-bottom: 10px !important;}
+.fixed-top {padding-top: 10px !important;padding-bottom: 10px !important;z-index: 0 !important;}
 /* ######### [dir ltr] ########## */
 
 @font-face {
