@@ -9,7 +9,7 @@ const Branches = () => {
 
   useEffect(() => {
     setTitle(t('sidenav.winchBranches'));
-  }, [setTitle, t, i18n.language]);
+  }, [setTitle]);
   return (
     <>
       {/* form */}
@@ -162,7 +162,7 @@ const Branches = () => {
           <li className="page-item disabled">
             <a
               className="page-link"
-              href=""
+              href="#"
               tabIndex="-1"
               aria-disabled="true"
             >

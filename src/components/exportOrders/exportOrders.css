@@ -13,7 +13,8 @@
   text-align: center;
   vertical-align: middle;
   padding-block: 20px;
-  border: 1px solid #eeeeee11;
+  /* border: 1px solid #eeeeee11; */
+  border: none;
   white-space: nowrap;
   background-color: #dddddd40;
 }
