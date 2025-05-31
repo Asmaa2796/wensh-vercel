@@ -22,10 +22,12 @@
 .div-bg select:focus {outline: none;}
 
 /* main content */
+.main_content .div-bg ,.main_content .barChart {box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, .1);}
 .stat_card {
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, .1);
   margin: 10px 0;
   background-color: var(--basic-color);
 }
