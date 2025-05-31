@@ -97,7 +97,7 @@ a {
 .text-lg {
   font-size: large;
 }
-.text-custom {font-size: 12px;}
+.text-custom {font-size: 12px;font-weight: bold;}
 .text-md {
   font-size: medium;
 }
