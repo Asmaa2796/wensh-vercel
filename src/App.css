@@ -97,7 +97,7 @@ a {
 .text-lg {
   font-size: large;
 }
-.text-custom {font-size: 12px;font-weight: bold;}
+.text-custom {font-size: 12px;}
 .text-md {
   font-size: medium;
 }
@@ -568,6 +568,7 @@ button.notification span {
 [dir="ltr"] .tab-content 
 {text-align: left;}
 [dir="ltr"] .custom-radio {margin-right: 0 !important;margin-left: 10px !important;}
+[dir="ltr"] .text-custom {font-weight: bold;}
 @media (max-width: 500px) {
     [dir="rtl "] .topnav .dropdown-menu-end[data-bs-popper] {
         right: auto !important;
