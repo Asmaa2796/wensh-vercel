@@ -9,7 +9,7 @@ i18n
   .use(LanguageDetector) // Detect browser language
   .use(initReactI18next)
   .init({
-    fallbackLng: 'ar',
+    fallbackLng: 'en',
     debug: false,
     backend: {
       loadPath: '/translations/{{lng}}/global.json',

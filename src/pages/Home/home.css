@@ -11,6 +11,7 @@
     font-size: 17px;
     color: var(--text-lighter);
     margin-bottom: 30px;
+    font-weight: bold;
 }
 .div-bg select {
         background-color: var(--basic-color);
@@ -29,6 +30,7 @@
   border: 1px solid #ddd;
   box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, .1);
   margin: 10px 0;
+  height: 200px;
   background-color: var(--basic-color);
 }
 
@@ -61,7 +63,9 @@
 .stat_card b {
   font-size: small;
   display: block;
+  white-space: pre-wrap;
   margin-top: 4px;
+  height: 40px;
 }
 /* charts */
 .canvasjs-chart-credit {display: none;}
@@ -71,8 +75,8 @@
   font-family: 'Montserrat',sans-serif !important;
 }
 .recharts-label-list text {fill: none;}
-.recharts-cartesian-axis-tick-value {font-size: 13px;}
-.recharts-legend-item-text {font-size: 13px;}
+.recharts-cartesian-axis-tick-value {font-size: 13px;font-weight: bold;}
+.recharts-legend-item-text {font-size: 13px;font-weight: bold;}
 .recharts-surface {margin-left: 4px;margin-right: 0;}
 /* stats */
 .stats li:nth-child(1) i {color: var(--text-color);}
@@ -84,6 +88,7 @@
   align-items: center;
   margin-block: 7px;
   font-size: 12px;
+  font-weight: bold;
   color: var(--text-lighter);
 }
 .map-ul {margin-top: 120px;}
@@ -96,9 +101,10 @@
   align-items: center;
   margin-block: 6px;
   font-size: 12px;
+  font-weight: bold;
   color: var(--text-lighter);
 }
-.providers_on_map h5 {font-size: 17px;margin-bottom: 0;margin-top: 10px;}
+.providers_on_map h5 {font-size: 17px;margin-bottom: 0;margin-top: 10px;font-weight: bold;}
 .providers_on_map .input-div ,.providers_on_map select {
   width: 100%;
   display: block;
@@ -151,7 +157,8 @@
   padding-inline: 2px;
 }
 .chart-text {
-  font: 16px/1.4em "Montserrat", sans-serif;
+  font: 16px/1.4em "GE", sans-serif;
+  font-weight: bold;
   fill: #000;
   -moz-transform: translateY(0.25em);
   -ms-transform: translateY(0.25em);
@@ -179,7 +186,7 @@
     stroke-dashoffset: -75;
   }
 }
-
+.recharts-tooltip-wrapper {font-weight: bold;}
 @media(max-width:768px) {
   .providers_on_map .input-div {
       position: relative;

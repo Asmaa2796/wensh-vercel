@@ -24,6 +24,7 @@
     box-shadow: none;
     outline: none;
 }
+.iti__dropdown-content {left: 0;right: unset;}
 @media(max-width:768px) {
     .iti__dropdown-content {width: 230px !important;}
 }

@@ -27,7 +27,7 @@ const Vendors = () => {
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
             <label className="text-light">{t('labels.status')}</label>
-            <select name="vendor_type">
+            <select name="status">
               <option value="">{t('labels.selectItem')}</option>
             </select>
           </div>

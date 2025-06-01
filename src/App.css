@@ -14,8 +14,8 @@
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('../src/Montserrat-Arabic-Regular.ttf') format('truetype');
+  font-family: 'GE';
+  src: url('../src/GE_SS_Two_Light.otf') format('truetype');
   font-display: swap;
 }
 
@@ -40,7 +40,7 @@ body::-webkit-scrollbar-thumb {
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "GE", sans-serif !important;
   position: relative;
   text-align: right !important;
   background-color: var(--body-color) !important;
@@ -97,7 +97,7 @@ a {
 .text-lg {
   font-size: large;
 }
-.text-custom {font-size: 12px;}
+
 .text-md {
   font-size: medium;
 }
@@ -109,7 +109,7 @@ a {
 .text-xs {
   font-size: x-small;
 }
-
+.text-custom {font-size: 12px;font-weight: bold;}
 .line-height {
   line-height: 1.7em;
 }
@@ -129,6 +129,33 @@ select {
   background-position: left 14px center;
   /* color: #ffffff80 !important; */
 }
+.file-input {overflow: hidden;position: relative;}
+.file-input__input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+.file-input__label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--basic-color);
+  font-size: 14px;
+  padding: 10px 12px;
+  background-color: #006a535e;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  color: var(--green-color);
+  border: 1px solid var(--green-color);
+}
+
 
 .shadow-sm {
   box-shadow: 0 .325rem .58rem rgba(0, 0, 0, 0.171) !important;
@@ -286,7 +313,7 @@ button.notification span {
 .sidenav .dropdown-toggle::after {
   left: 0px;
   position: absolute;
-  top: 13px;
+  top: 10px;
   content: "";
   display: inline-block;
   width: 13px;
@@ -544,7 +571,8 @@ button.notification span {
 [dir="ltr"] .sidenav .dropdown-menu li a {font-size: 12px;}
 [dir="ltr"] select {background-position: right 14px center;}
 [dir="ltr"] .chart-text {font-family: 'Nunito',sans-serif !important;}
-[dir="ltr"] .ar-lang {font-family: 'Montserrat',sans-serif !important;font-weight: normal !important;}
+.ar-lang {font-weight: bold !important;}
+[dir="ltr"] .ar-lang {font-family: 'GE',sans-serif !important;}
 [dir="ltr"] .chart-text {border-left: 1px solid #eeeeee26;border-right:none}
 [dir="ltr"] .pagination .page-item:first-child .page-link {
     border-radius: 50%;
@@ -569,6 +597,8 @@ button.notification span {
 {text-align: left;}
 [dir="ltr"] .custom-radio {margin-right: 0 !important;margin-left: 10px !important;}
 [dir="ltr"] .text-custom {font-weight: bold;}
+[dir="ltr"] .content_wrapper .table tbody tr  td {font-weight: bold;}
+[dir="ltr"] .sidenav .dropdown-toggle::after {top: 10px;}
 @media (max-width: 500px) {
     [dir="rtl "] .topnav .dropdown-menu-end[data-bs-popper] {
         right: auto !important;

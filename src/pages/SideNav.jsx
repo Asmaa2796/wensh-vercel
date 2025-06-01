@@ -213,7 +213,25 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
             </li>
           </ul>
         </li>
-        <li className="dropdown">
+        <li 
+        className={`dropdown ${
+            currentPath === "/tripway_partners_list"
+              ? "active"
+              : "" || currentPath === "/users_winch_partners"
+              ? "active"
+              : "" || currentPath === "/user_permissions"
+              ? "active"
+              : "" || currentPath === "/clients_partners_winch"
+              ? "active"
+              : "" || currentPath === "/partners_contracts"
+              ? "active"
+              : "" || currentPath === "/partners_docs"
+              ? "active"
+              : "" || currentPath === "/docs_carriers"
+              ? "active"
+              : ""
+          }`}
+        >
           <a
             className="dropdown-toggle text-gray"
             data-bs-toggle="dropdown"
@@ -225,18 +243,77 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
           </a>
           <ul className="dropdown-menu">
             <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                -
+              <Link to="tripway_partners_list" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t('labels.tripwayPartnersList')}
               </Link>
             </li>
             <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                -
+              <Link to="users_winch_partners" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t('labels.winchPartnerUsers')}
+              </Link>
+            </li>
+            <li>
+              <Link to="user_permissions" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+               {t('labels.winchPartnerUserPermissions')}
+              </Link>
+            </li>
+            <li>
+              <Link to="clients_partners_winch" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t('labels.winchPartnerClients')}
+              </Link>
+            </li>
+            <li>
+              <Link to="partners_contracts" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t('labels.winchPartnerContracts')}
+              </Link>
+            </li>
+            <li>
+              <Link to="partners_docs" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t('labels.partnerDocuments')}
+              </Link>
+            </li>
+            <li>
+              <Link to="docs_carriers" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t('labels.documentCarriers')}
               </Link>
             </li>
           </ul>
         </li>
-        <li className="dropdown">
+        <li 
+        className={`dropdown 
+          ${currentPath === "/drivers"? "active" :"" ||
+            currentPath === "/vehiclesPlural"? "active" :"" ||
+            currentPath === "/exceeded_commission_accounts"? "active" :""
+          }`}
+        >
           <a
             className="dropdown-toggle text-gray"
             data-bs-toggle="dropdown"
@@ -248,13 +325,30 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
           </a>
           <ul className="dropdown-menu">
             <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                -
+              <Link to="drivers" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t('labels.drivers')}
               </Link>
             </li>
             <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                -
+              <Link to="vehiclesPlural" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t('labels.vehiclesPlural')}
+              </Link>
+            </li>
+            <li>
+              <Link to="exceeded_commission_accounts" onClick={handleLinkClick} className="dropdown-item">
+              <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t('labels.exceededCommissionAccounts')}
               </Link>
             </li>
           </ul>

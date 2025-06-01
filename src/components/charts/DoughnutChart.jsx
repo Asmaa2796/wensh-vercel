@@ -27,7 +27,7 @@ const DoughnutChart = () => {
         verticalAlign: "center",
         fontSize: 16,
         fontColor: "#0f1535",
-        fontFamily: "Montserrat, sans-serif",
+        fontFamily: "GE, sans-serif",
         dockInsidePlotArea: true,
         maxWidth: 150,
         wrap: true

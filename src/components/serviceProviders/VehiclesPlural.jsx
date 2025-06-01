@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
 import { useTranslation } from 'react-i18next';
-const Ratings = () => {
+const VehiclesPlural = () => {
   const {t,i18n} = useTranslation('global');
   const { setTitle } = useTitle();
 
   useEffect(() => {
-    setTitle(t('sidenav.ratings'));
+    setTitle(t('sidenav.vehiclesPlural'));
   }, [setTitle, t, i18n.language]);
   return (
     <>
@@ -187,4 +187,4 @@ const Ratings = () => {
   );
 };
 
-export default Ratings;
+export default VehiclesPlural;

@@ -22,6 +22,17 @@ import OfficialRecievingDocs from "./components/businessSector/OfficialRecieving
 import BusinessSectorContracts from "./components/businessSector/BusinessSectorContracts";
 import CreditLimit from "./components/businessSector/CreditLimit";
 import BusinessDocs from "./components/businessSector/BusinessDocs";
+import TripwayPartnersList from "./components/tripwayPartners/TripwayPartnersList";
+import UsersWinchPartners from "./components/tripwayPartners/UsersWinchPartners";
+import UserPermissions from "./components/tripwayPartners/UserPermissions";
+import ClientsPartnersWinch from "./components/tripwayPartners/ClientsPartnersWinch";
+import PartnersContracts from "./components/tripwayPartners/PartnersContracts";
+import PartnersDocs from "./components/tripwayPartners/PartnersDocs";
+import DocsCarriers from "./components/tripwayPartners/DocsCarriers";
+import ExceededCommissionAccounts from "./components/serviceProviders/ExceededCommissionAccounts";
+import Drivers from "./components/serviceProviders/Drivers";
+import VehiclesPlural from "./components/serviceProviders/VehiclesPlural";
+import AddProvider from "./components/serviceProviders/AddProvider";
 
 function App() {
   
@@ -48,6 +59,17 @@ function App() {
             <Route path="business_sector/contracts" element={<BusinessSectorContracts />} />
             <Route path="business_sector/credit_limit" element={<CreditLimit />} />
             <Route path="business_sector/business_docs" element={<BusinessDocs />} />
+            <Route path="tripway_partners_list" element={<TripwayPartnersList />} />
+            <Route path="users_winch_partners" element={<UsersWinchPartners />} />
+            <Route path="user_permissions" element={<UserPermissions />} />
+            <Route path="clients_partners_winch" element={<ClientsPartnersWinch />} />
+            <Route path="partners_contracts" element={<PartnersContracts />} />
+            <Route path="partners_docs" element={<PartnersDocs />} />
+            <Route path="docs_carriers" element={<DocsCarriers />} />
+            <Route path="drivers" element={<Drivers />} />
+            <Route path="drivers/add_provider" element={<AddProvider />} />
+            <Route path="vehicles_plural" element={<VehiclesPlural />} />
+            <Route path="exceeded_commission_accounts" element={<ExceededCommissionAccounts />} />
           </Route>
         </Routes>
         <Footer />
