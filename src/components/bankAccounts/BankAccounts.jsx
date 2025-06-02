@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useTitle } from "../../context/TitleContext";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-const ClientsPartnersWinch = () => {
+const BankAccounts = () => {
   const { t, i18n } = useTranslation("global");
   const { setTitle } = useTitle();
 
   useEffect(() => {
-    setTitle(t('labels.tripwayPartnerClients'));
+    setTitle(t('sidenav.bankAccounts'));
   }, [setTitle, t, i18n.language]);
   return (
     <>
@@ -15,16 +15,19 @@ const ClientsPartnersWinch = () => {
       <form className="table_form form-style my-3 py-3">
         <div className="row align-items-center">
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">{t('labels.tripwayPartners')}</label>
-            <input type="text" name="tripway_partners" />
+            <label className="text-light">{t('labels.userType')}</label>
+            <input type="text" name="user_type" />
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">{t('labels.user')}</label>
-            <input type="text" name="tripway_partners" />
+            <label className="text-light">{t('labels.status')}</label>
+            <select name="status" className="w-100">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
-            <label className="text-light">{t('labels.email')}</label>
-            <input type="text" name="email" />
+            <label className="text-light">{t('labels.IBANNumber')}</label>
+            <input type="text" name="iban_number" />
           </div>
           <div className="col-xl-4 col-lg-4 col-md-6 col-12">
             <label className="text-light">{t('labels.report')}</label>
@@ -39,9 +42,9 @@ const ClientsPartnersWinch = () => {
       <div className="no_data text-center rounded my-2 p-3" style={{backgroundColor:"#569a8b"}}>
         <h5 className="my-2 text-md text-white">{t('labels.noData')}</h5>
       </div>
-     
+    
     </>
   );
 };
 
-export default ClientsPartnersWinch;
+export default BankAccounts;

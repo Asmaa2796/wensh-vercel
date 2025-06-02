@@ -43,6 +43,9 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
       <span className="closeNav" onClick={toggleSideNav}>
         <i className="bi bi-x"></i>
       </span>
+      <div className="text-center mt-3">
+        <Link to="/"><img src="/img/fav.png" alt="tripway" style={{width:"auto",maxHeight:"60px"}} /></Link>
+      </div>
       <ul className="mb-0 mt-5 list-unstyled main-ul">
         <li className={`${currentPath === "/" ? "active" : ""}`}>
           <Link to="/" onClick={handleLinkClick}>
@@ -60,7 +63,15 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
             </span>
           </Link>
         </li>
-        <li className={`${currentPath === "/export_orders" ? "active" : "" || currentPath === "/export_orders/add" ? "active" : ""}`}>
+        <li
+          className={`${
+            currentPath === "/export_orders"
+              ? "active"
+              : "" || currentPath === "/export_orders/add"
+              ? "active"
+              : ""
+          }`}
+        >
           <Link to="export_orders" onClick={handleLinkClick}>
             <span className="text-gray">
               <img src="/img/icons/Icon3.png" alt="Icon3.png" />
@@ -87,7 +98,15 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
           </Link>
         </li>
 
-        <li className={`${currentPath === "/vendors" ? "active" : ""||currentPath === "/vendors/add_vendor" ? "active" : ""}`}>
+        <li
+          className={`${
+            currentPath === "/vendors"
+              ? "active"
+              : "" || currentPath === "/vendors/add_vendor"
+              ? "active"
+              : ""
+          }`}
+        >
           <Link to="vendors" onClick={handleLinkClick}>
             <span className="text-gray">
               <img src="/img/icons/Icon5.png" alt="Icon3.png" />
@@ -95,7 +114,15 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
             </span>
           </Link>
         </li>
-        <li className={`${currentPath === "/clients" ? "active" : ""||currentPath === "/clients/add_client" ? "active" : ""}`}>
+        <li
+          className={`${
+            currentPath === "/clients"
+              ? "active"
+              : "" || currentPath === "/clients/add_client"
+              ? "active"
+              : ""
+          }`}
+        >
           <Link to="clients" onClick={handleLinkClick}>
             <span className="text-gray">
               <img src="/img/icons/Icon5.png" alt="Icon6.png" />
@@ -213,8 +240,8 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
             </li>
           </ul>
         </li>
-        <li 
-        className={`dropdown ${
+        <li
+          className={`dropdown ${
             currentPath === "/tripway_partners_list"
               ? "active"
               : "" || currentPath === "/users_winch_partners"
@@ -243,75 +270,108 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
           </a>
           <ul className="dropdown-menu">
             <li>
-              <Link to="tripway_partners_list" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="tripway_partners_list"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-                {t('labels.tripwayPartnersList')}
+                {t("labels.tripwayPartnersList")}
               </Link>
             </li>
             <li>
-              <Link to="users_winch_partners" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="users_winch_partners"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-                {t('labels.winchPartnerUsers')}
+                {t("labels.winchPartnerUsers")}
               </Link>
             </li>
             <li>
-              <Link to="user_permissions" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="user_permissions"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-               {t('labels.winchPartnerUserPermissions')}
+                {t("labels.winchPartnerUserPermissions")}
               </Link>
             </li>
             <li>
-              <Link to="clients_partners_winch" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="clients_partners_winch"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-                {t('labels.winchPartnerClients')}
+                {t("labels.winchPartnerClients")}
               </Link>
             </li>
             <li>
-              <Link to="partners_contracts" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="partners_contracts"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-                {t('labels.winchPartnerContracts')}
+                {t("labels.winchPartnerContracts")}
               </Link>
             </li>
             <li>
-              <Link to="partners_docs" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="partners_docs"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-                {t('labels.partnerDocuments')}
+                {t("labels.partnerDocuments")}
               </Link>
             </li>
             <li>
-              <Link to="docs_carriers" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="docs_carriers"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-                {t('labels.documentCarriers')}
+                {t("labels.documentCarriers")}
               </Link>
             </li>
           </ul>
         </li>
-        <li 
-        className={`dropdown 
-          ${currentPath === "/drivers"? "active" :"" ||
-            currentPath === "/vehiclesPlural"? "active" :"" ||
-            currentPath === "/exceeded_commission_accounts"? "active" :""
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/drivers"
+              ? "active"
+              : "" || currentPath === "/vehicles_plural"
+              ? "active"
+              : "" || currentPath === "/exceeded_commission_accounts"
+              ? "active"
+              : ""
           }`}
         >
           <a
@@ -325,30 +385,42 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
           </a>
           <ul className="dropdown-menu">
             <li>
-              <Link to="drivers" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="drivers"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-                {t('labels.drivers')}
+                {t("labels.drivers")}
               </Link>
             </li>
             <li>
-              <Link to="vehiclesPlural" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="vehicles_plural"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-                {t('labels.vehiclesPlural')}
+                {t("labels.vehiclesPlural")}
               </Link>
             </li>
             <li>
-              <Link to="exceeded_commission_accounts" onClick={handleLinkClick} className="dropdown-item">
-              <i
+              <Link
+                to="exceeded_commission_accounts"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
                   className="bi bi-caret-left"
                   style={{ marginLeft: "2px" }}
                 ></i>
-                {t('labels.exceededCommissionAccounts')}
+                {t("labels.exceededCommissionAccounts")}
               </Link>
             </li>
           </ul>
@@ -361,23 +433,96 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
             </span>
           </Link>
         </li>
-        <li>
-          <Link>
-            <span className="text-gray">
-              <img src="/img/icons/Icon17.png" alt="Icon11.png" />
-              {t("sidenav.bankAccounts")}
-            </span>
-          </Link>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/bank_accounts"
+              ? "active"
+              : "" || currentPath === "/banks"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <img src="/img/icons/Icon9.png" alt="Icon9.png" />
+            {t("sidenav.bankAccounts")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="bank_accounts"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.bankAccounts")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="banks"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.banks")}
+              </Link>
+            </li>
+          </ul>
         </li>
-        <li>
-          <Link>
+        <li
+          className={`${currentPath === "withdrawal_deposit" ? "active" : ""}`}
+        >
+          <Link to="withdrawal_deposit">
             <span className="text-gray">
               <img src="/img/icons/Icon16.png" alt="Icon12.png" />
               {t("sidenav.withdrawDeposit")}
             </span>
           </Link>
         </li>
-        <li className="dropdown">
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/trip_requests"
+              ? "active"
+              : "" || currentPath === "/internal_requests"
+              ? "active"
+              : "" || currentPath === "/compensation_approvals"
+              ? "active"
+              : "" || currentPath === "/order_issue_reports"
+              ? "active"
+              : "" || currentPath === "/order_document_reception"
+              ? "active"
+              : "" || currentPath === "/documents_files"
+              ? "active"
+              : "" || currentPath === "/order_summary"
+              ? "active"
+              : "" || currentPath === "/edit_order_details"
+              ? "active"
+              : "" || currentPath === "/edit_order_prices"
+              ? "active"
+              : "" || currentPath === "/edit_shipment_numbers"
+              ? "active"
+              : "" || currentPath === "/trip_reports"
+              ? "active"
+              : "" || currentPath === "/duplicate_shipment_numbers"
+              ? "active"
+              : "" || currentPath === "/late_entries"
+              ? "active"
+              : ""
+          }`}
+        >
           <a
             className="dropdown-toggle text-gray"
             data-bs-toggle="dropdown"
@@ -389,13 +534,172 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
           </a>
           <ul className="dropdown-menu">
             <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                -
+              <Link
+                to="trip_requests"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.tripRequests")}
               </Link>
             </li>
             <li>
-              <Link to="#" onClick={handleLinkClick} className="dropdown-item">
-                -
+              <Link
+                to="internal_requests"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.internalRequests")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="compensation_approvals"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.compensationApprovals")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="order_issue_reports"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.orderIssueReports")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="order_document_reception"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.orderDocumentReception")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="documents_files"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.documentsAndFiles")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="order_summary"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.orderSummary")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="edit_order_details"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.editOrderDetails")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="edit_order_prices"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.editOrderPrices")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="edit_shipment_numbers"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.editShipmentNumbers")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="trip_reports"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.tripReports")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="duplicate_shipment_numbers"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.duplicateShipmentNumbers")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="late_entries"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.lateEntries")}
               </Link>
             </li>
           </ul>

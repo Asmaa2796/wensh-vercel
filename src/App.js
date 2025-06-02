@@ -33,6 +33,22 @@ import ExceededCommissionAccounts from "./components/serviceProviders/ExceededCo
 import Drivers from "./components/serviceProviders/Drivers";
 import VehiclesPlural from "./components/serviceProviders/VehiclesPlural";
 import AddProvider from "./components/serviceProviders/AddProvider";
+import BankAccounts from "./components/bankAccounts/BankAccounts";
+import Banks from "./components/bankAccounts/Banks";
+import WithdrawalAndDeposit from "./components/withdrawalAndDeposit/WithdrawalAndDeposit";
+import TripRequests from "./components/tripRequests/TripRequests";
+import InternalRequests from "./components/tripRequests/InternalRequests";
+import CompensationApprovals from "./components/tripRequests/CompensationApprovals";
+import OrderIssueReports from "./components/tripRequests/OrderIssueReports";
+import OrderDocumentReception from "./components/tripRequests/OrderDocumentReception";
+import DocumentsAndFiles from "./components/tripRequests/DocumentsAndFiles";
+import OrderSummary from "./components/tripRequests/OrderSummary";
+import EditOrderDetails from "./components/tripRequests/EditOrderDetails";
+import EditOrderPrices from "./components/tripRequests/EditOrderPrices";
+import EditShipmentNumbers from "./components/tripRequests/EditShipmentNumbers";
+import TripReports from "./components/tripRequests/TripReports";
+import DuplicateShipmentNumbers from "./components/tripRequests/DuplicateShipmentNumbers";
+import LateEntries from "./components/tripRequests/LateEntries";
 
 function App() {
   
@@ -70,6 +86,22 @@ function App() {
             <Route path="drivers/add_provider" element={<AddProvider />} />
             <Route path="vehicles_plural" element={<VehiclesPlural />} />
             <Route path="exceeded_commission_accounts" element={<ExceededCommissionAccounts />} />
+            <Route path="bank_accounts" element={<BankAccounts />} />
+            <Route path="banks" element={<Banks />} />
+            <Route path="withdrawal_deposit" element={<WithdrawalAndDeposit />} />
+            <Route path="trip_requests" element={<TripRequests />} />
+            <Route path="internal_requests" element={<InternalRequests />} />
+            <Route path="compensation_approvals" element={<CompensationApprovals />} />
+            <Route path="order_issue_reports" element={<OrderIssueReports />} />
+            <Route path="order_document_reception" element={<OrderDocumentReception />} />
+            <Route path="documents_files" element={<DocumentsAndFiles />} />
+            <Route path="order_summary" element={<OrderSummary />} />
+            <Route path="edit_order_details" element={<EditOrderDetails />} />
+            <Route path="edit_order_prices" element={<EditOrderPrices />} />
+            <Route path="edit_shipment_numbers" element={<EditShipmentNumbers />} />
+            <Route path="trip_reports" element={<TripReports />} />
+            <Route path="duplicate_shipment_numbers" element={<DuplicateShipmentNumbers />} />
+            <Route path="late_entries" element={<LateEntries />} />
           </Route>
         </Routes>
         <Footer />

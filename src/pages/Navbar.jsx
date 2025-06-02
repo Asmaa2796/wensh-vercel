@@ -37,7 +37,7 @@ const Navbar = ({ toggleSideNav, isSideNavOpen }) => {
 
   return (
     <div
-      className={`navbar topnav border-bottom ${
+      className={`navbar topnav ${
         isSideNavOpen ? "with-sidenav" : "full-width"
       } ${isMobileScrolled ? "fixed-top" : ""}`}
     >

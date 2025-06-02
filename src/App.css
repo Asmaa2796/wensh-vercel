@@ -427,6 +427,7 @@ button.notification span {
     left: auto;
 }
 } */
+ .modal-body {font-weight: bold;}
 @media (min-width: 1191px) {
   .sidenav.openNav {
     right: 0;
@@ -599,6 +600,8 @@ button.notification span {
 [dir="ltr"] .text-custom {font-weight: bold;}
 [dir="ltr"] .content_wrapper .table tbody tr  td {font-weight: bold;}
 [dir="ltr"] .sidenav .dropdown-toggle::after {top: 10px;}
+.total_amounts {text-align: left;}
+[dir="ltr"] .total_amounts {text-align: right;}
 @media (max-width: 500px) {
     [dir="rtl "] .topnav .dropdown-menu-end[data-bs-popper] {
         right: auto !important;

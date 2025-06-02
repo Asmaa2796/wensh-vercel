@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="main_content">
       <div className="row justify-content-center">
-        <div className="col-xl-2 col-lg-4 col-md-6 col-12">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-12">
           <div className="stat_card">
             <div className="icon">
               <i
@@ -27,7 +27,7 @@ const Home = () => {
             <img src="/img/icons/stat1.png" alt="stat1" />
           </div>
         </div>
-        <div className="col-xl-2 col-lg-4 col-md-6 col-12">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-12">
           <div className="stat_card">
             <div className="icon">
               <i
@@ -40,7 +40,7 @@ const Home = () => {
             <img src="/img/icons/stat2.png" alt="stat2" />
           </div>
         </div>
-        <div className="col-xl-2 col-lg-4 col-md-6 col-12">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-12">
           <div className="stat_card">
             <div className="icon">
               <i
@@ -53,7 +53,7 @@ const Home = () => {
             <img src="/img/icons/stat3.png" alt="stat3" />
           </div>
         </div>
-        <div className="col-xl-2 col-lg-4 col-md-6 col-12">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-12">
           <div className="stat_card">
             <div className="icon">
               <i
@@ -66,7 +66,7 @@ const Home = () => {
             <img src="/img/icons/stat4.png" alt="stat4" />
           </div>
         </div>
-        <div className="col-xl-2 col-lg-4 col-md-6 col-12">
+        <div className="col-xl-4 col-lg-4 col-md-6 col-12">
           <div className="stat_card">
             <div className="icon">
               <i
@@ -77,6 +77,19 @@ const Home = () => {
             <h5>13211</h5>
             <b> {t('home.completed')} </b>
             <img src="/img/icons/stat5.png" alt="stat5" />
+          </div>
+        </div>
+        <div className="col-xl-4 col-lg-4 col-md-6 col-12">
+          <div className="stat_card">
+            <div className="icon">
+              <i
+                className="bi bi-currency-dollar"
+                style={{ color: "#FA7146" }}
+              ></i>
+            </div>
+            <h5>13211</h5>
+            <b> {t('sidenav.ratings')} </b>
+            <img src="/img/icons/stat3.png" alt="stat3" />
           </div>
         </div>
         <div className="col-xl-5 col-lg-5 col-md-12 col-12">
