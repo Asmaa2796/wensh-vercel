@@ -49,6 +49,18 @@ import EditShipmentNumbers from "./components/tripRequests/EditShipmentNumbers";
 import TripReports from "./components/tripRequests/TripReports";
 import DuplicateShipmentNumbers from "./components/tripRequests/DuplicateShipmentNumbers";
 import LateEntries from "./components/tripRequests/LateEntries";
+import RentalRequests from "./components/mainRentals/RentalRequests";
+import RentalProjects from "./components/mainRentals/RentalProjects";
+import RentalContracts from "./components/mainRentals/RentalContracts";
+import RentalRequestSummary from "./components/mainRentals/RentalRequestSummary";
+import RentalReports from "./components/mainRentals/RentalReports";
+import AddRentalContract from "./components/mainRentals/AddRentalContract";
+import TransportDocuments from "./components/transportDocuments/TransportDocuments";
+import PriceOfferRequests from "./components/priceOffers/PriceOfferRequests";
+import ClientOffers from "./components/priceOffers/ClientOffers";
+import ProviderOffers from "./components/priceOffers/ProviderOffers";
+import Profits from "./components/reportsAndStatistics/Profits";
+import MostRequestedServices from "./components/reportsAndStatistics/MostRequestedServices";
 
 function App() {
   
@@ -102,6 +114,18 @@ function App() {
             <Route path="trip_reports" element={<TripReports />} />
             <Route path="duplicate_shipment_numbers" element={<DuplicateShipmentNumbers />} />
             <Route path="late_entries" element={<LateEntries />} />
+            <Route path="rental_requests" element={<RentalRequests />} />
+            <Route path="rental_projects" element={<RentalProjects />} />
+            <Route path="rental_contracts" element={<RentalContracts />} />
+            <Route path="rental_request_summary" element={<RentalRequestSummary />} />
+            <Route path="rental_reports" element={<RentalReports />} />
+            <Route path="rental_contracts/add_rental_contract" element={<AddRentalContract />} />
+            <Route path="transport_documents" element={<TransportDocuments />} />
+            <Route path="price_offer_requests" element={<PriceOfferRequests />} />
+            <Route path="client_offers" element={<ClientOffers />} />
+            <Route path="provider_offers" element={<ProviderOffers />} />
+            <Route path="profits" element={<Profits />} />
+            <Route path="most_requested_services" element={<MostRequestedServices />} />
           </Route>
         </Routes>
         <Footer />

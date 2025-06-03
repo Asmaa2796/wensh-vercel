@@ -192,7 +192,48 @@ select {
 .file--upload>label {
   color: var(--main-color) !important;
 }
+.custom-group {position: relative;display: inline-block;}
+.custom-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
 
+.custom-group label {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.custom-group label:before {
+  content:'';
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--green-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.custom-group input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 3px;
+  right: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid var(--green-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
 /* form style */
 .form-style label {
   display: block;
@@ -389,13 +430,11 @@ button.notification span {
   background-color: #006a53b0;
     color: var(--basic-color) !important;
 }
-.sidenav li img {
+.sidenav li svg {
   width: auto;
-  max-height: 20px;
+  max-height: 30px;
   margin-left: 3px;
-  mix-blend-mode: exclusion;
    transition: all .3s ease-in-out;
-  opacity: .7;
 }
 .sidenav li span {display: flex;align-items: center;font-weight: bold;transition: all .3s ease-in-out;}
 .sidenav li a.dropdown-toggle {font-weight: bold;transition: all .3s ease-in-out;}
@@ -428,6 +467,34 @@ button.notification span {
 }
 } */
  .modal-body {font-weight: bold;}
+ .accordion-button {margin: 0 !important;}
+ .accordion-button::after
+ {
+  background-size: 17px !important;
+  margin-right: auto;
+  margin-left: unset !important;
+  transform: unset !important;
+  background-image: url('../public/plus.png') !important;
+}
+.accordion-button:not(.collapsed)::after
+ {
+  background-size: 17px !important;
+  margin-right: auto;
+  margin-left: unset !important;
+  background-image: url('../public/minus.png') !important;
+  transform: unset !important;
+}
+
+.accordion-button:not(.collapsed)
+{
+  background-color: #eee !important;
+}
+.accordion-button h5 {
+  font-size: 17px;
+    font-weight: bold;
+    color: #333;
+}
+.accordion-button:focus {box-shadow: none !important;border: none;}
 @media (min-width: 1191px) {
   .sidenav.openNav {
     right: 0;
@@ -555,6 +622,8 @@ button.notification span {
 [dir="ltr"] .topnav .dropdown-menu,
 [dir="ltr"] .providers_on_map h5
  {text-align: left;}
+ [dir="ltr"] .table_form b
+ {text-align: left;}
  [dir="ltr"] .circle_chart b, [dir="ltr"] .circle_chart h5 {
     margin-left: 5px;
     margin-right: 0px;
@@ -567,8 +636,9 @@ button.notification span {
 [dir="ltr"] .table_form select
  {text-align: left;}
 [dir="ltr"] .stat_card img {
-    transform: scalex(-1);
+  transform: scalex(-1);
 }
+[dir="ltr"] .accordion-button::after {margin-left: auto !important;margin-right: unset !important;}
 [dir="ltr"] .sidenav .dropdown-menu li a {font-size: 12px;}
 [dir="ltr"] select {background-position: right 14px center;}
 [dir="ltr"] .chart-text {font-family: 'Nunito',sans-serif !important;}
@@ -602,6 +672,10 @@ button.notification span {
 [dir="ltr"] .sidenav .dropdown-toggle::after {top: 10px;}
 .total_amounts {text-align: left;}
 [dir="ltr"] .total_amounts {text-align: right;}
+[dir="ltr"] .custom-group input:checked + label:after {
+  right: unset !important;
+  left: 9px;
+}
 @media (max-width: 500px) {
     [dir="rtl "] .topnav .dropdown-menu-end[data-bs-popper] {
         right: auto !important;
