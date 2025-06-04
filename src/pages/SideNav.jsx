@@ -18,6 +18,8 @@ import { MdOutlineCarRental } from "react-icons/md";
 import { IoDocuments } from "react-icons/io5";
 import { IoIosPricetags } from "react-icons/io";
 import { GiProfit } from "react-icons/gi";
+import { GiReceiveMoney } from "react-icons/gi";
+import { MdManageHistory } from "react-icons/md";
 
 const SideNav = ({ isOpen, toggleSideNav }) => {
   const { t, i18n } = useTranslation("global");
@@ -1088,6 +1090,117 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
                   style={{ marginLeft: "2px" }}
                 ></i>
                 {t("sidenav.tripRequestReport")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/purchase_requests"
+              ? "active"
+              : "" || currentPath === "/initial_purchase_requests"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <GiReceiveMoney />
+            {t("sidenav.purchaseRequests")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="purchase_requests"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.purchaseRequests")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="initial_purchase_requests"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.initialPurchaseRequests")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/maintenance"
+              ? "active"
+              : "" || currentPath === "/fuel"
+              ? "active"
+              : "" || currentPath === "/vehicle_statement"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <MdManageHistory />
+            {t("sidenav.fleetVehiclesManagement")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="maintenance"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.maintenance")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="fuel"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.fuel")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="vehicle_statement"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.vehicleStatement")}
               </Link>
             </li>
           </ul>

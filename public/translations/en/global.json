@@ -97,7 +97,13 @@
     "documentReceptionReports": "Document Reception Reports",
     "accountManagerRequestReports": "Account Manager Request Reports",
     "operatorTripReports": "Operator Trip Reports",
-    "tripRequestReport": "Trip Request Report"
+    "tripRequestReport": "Trip Request Report",
+    "purchaseRequests": "Purchase Requests",
+    "initialPurchaseRequests": "Initial Purchase Requests",
+    "fleetVehiclesManagement": "Fleet Vehicles Management",
+    "maintenance": "Maintenance",
+    "fuel": "Fuel",
+    "vehicleStatement": "Vehicle Statement"
   },
   "btns": {
     "viewResults": "View Results",
@@ -462,6 +468,14 @@
     "providersCost": "Providers' Cost",
     "clientsPrice": "Clients' Price",
     "systemPercentage": "System Percentage",
-    "percentage": "Percentage"
+    "percentage": "Percentage",
+    "vat": "Value Added Tax (VAT)",
+    "totalAmount": "Total Amount",
+    "totalTaxes": "Total Taxes",
+    "calculate": "Calculate",
+    "tax": "Tax",
+    "sortType": "Sort Type",
+    "hideZeroOrders": "Hide Zero Orders",
+    "exportInvoices": "Export Invoices"
   }
 }

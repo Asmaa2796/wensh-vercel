@@ -61,6 +61,15 @@ import ClientOffers from "./components/priceOffers/ClientOffers";
 import ProviderOffers from "./components/priceOffers/ProviderOffers";
 import Profits from "./components/reportsAndStatistics/Profits";
 import MostRequestedServices from "./components/reportsAndStatistics/MostRequestedServices";
+import ActiveAccounts from "./components/reportsAndStatistics/ActiveAccounts";
+import Taxes from "./components/reportsAndStatistics/Taxes";
+import TaxCalculation from "./components/reportsAndStatistics/TaxCalculation";
+import NegativeAccounts from "./components/reportsAndStatistics/NegativeAccounts";
+import LowestCostPrice from "./components/reportsAndStatistics/LowestCostPrice";
+import DocumentReceptionReports from "./components/reportsAndStatistics/DocumentReceptionReports";
+import AccountManagerRequestReports from "./components/reportsAndStatistics/AccountManagerRequestReports";
+import OperatorTripReports from "./components/reportsAndStatistics/OperatorTripReports";
+import TripRequestReport from "./components/reportsAndStatistics/TripRequestReport";
 
 function App() {
   
@@ -126,6 +135,15 @@ function App() {
             <Route path="provider_offers" element={<ProviderOffers />} />
             <Route path="profits" element={<Profits />} />
             <Route path="most_requested_services" element={<MostRequestedServices />} />
+            <Route path="active_accounts" element={<ActiveAccounts />} />
+            <Route path="taxes" element={<Taxes />} />
+            <Route path="tax_calculation" element={<TaxCalculation />} />
+            <Route path="negative_accounts" element={<NegativeAccounts />} />
+            <Route path="lowest_cost_price" element={<LowestCostPrice />} />
+            <Route path="document_reception_reports" element={<DocumentReceptionReports />} />
+            <Route path="account_manager_request_reports" element={<AccountManagerRequestReports />} />
+            <Route path="operator_trip_reports" element={<OperatorTripReports />} />
+            <Route path="trip_request_report" element={<TripRequestReport />} />
           </Route>
         </Routes>
         <Footer />

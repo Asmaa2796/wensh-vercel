@@ -602,7 +602,8 @@ button.notification span {
 }
 [dir="ltr"] .sidenav li {
         text-align: left;
-  }
+}
+[dir="ltr"] .sidenav li svg {margin-right: 3px;margin-left: 0 !important;}
 [dir="ltr"] .sidenav .dropdown-toggle::after {
   right: 0px;
   left: unset;

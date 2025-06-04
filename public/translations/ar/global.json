@@ -98,7 +98,13 @@
     "documentReceptionReports": "تقارير استلام المستندات",
     "accountManagerRequestReports": "تقارير طلبات مدراء الحسابات",
     "operatorTripReports": "تقارير الرحلات ( المشغلين )",
-    "tripRequestReport": "تقرير طلبات الرحلات"
+    "tripRequestReport": "تقرير طلبات الرحلات",
+    "purchaseRequests": "طلبات الشراء",
+    "initialPurchaseRequests": "طلبات الشراء المبدئية",
+    "fleetVehiclesManagement": "إدارة مركبات الأسطول",
+    "maintenance": "الصيانة",
+    "fuel": "الوقود",
+    "vehicleStatement": "كشف حساب مركبة"
   },
   "btns": {
     "viewResults": "عرض النتائج",
@@ -461,6 +467,14 @@
     "providersCost": "تكلفة المزودين",
     "clientsPrice": "سعر العملاء",
     "systemPercentage": "نسبة النظام",
-    "percentage": "نسبة مؤوية"
+    "percentage": "نسبة مؤوية",
+    "vat": "ضريبة القيمة المضافة",
+    "totalAmount": "المبلغ الكلي",
+    "totalTaxes": "مجموع الضرائب",
+    "calculate": "حساب",
+    "tax": "الضريبة",
+    "sortType": "نوع حسب",
+    "hideZeroOrders": "إخفاء الطلبات الصفرية",
+    "exportInvoices": "تصدير الفواتير"
   }
 }
