@@ -20,6 +20,7 @@ import { IoIosPricetags } from "react-icons/io";
 import { GiProfit } from "react-icons/gi";
 import { GiReceiveMoney } from "react-icons/gi";
 import { MdManageHistory } from "react-icons/md";
+import { FaFileInvoice } from "react-icons/fa6";
 
 const SideNav = ({ isOpen, toggleSideNav }) => {
   const { t, i18n } = useTranslation("global");
@@ -1201,6 +1202,147 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
                   style={{ marginLeft: "2px" }}
                 ></i>
                 {t("sidenav.vehicleStatement")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === ""
+              ? "active"
+              : "" || currentPath === ""
+              ? "active"
+              : "" || currentPath === ""
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <MdManageHistory />
+            {t("sidenav.rentalVehicleManagement")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="maintenance"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.maintenance")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="fuel"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.fuel")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="vehicle_statement"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.vehicleStatement")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/sales_invoices"
+              ? "active"
+              : "" || currentPath === "/purchase_invoices"
+              ? "active"
+              : "" || currentPath === "/vouchers"
+              ? "active"
+              : "" || currentPath === "/customer_vouchers"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <FaFileInvoice />
+            {t("sidenav.invoicesAndDocuments")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="sales_invoices"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.salesInvoices")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="purchase_invoices"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.purchaseInvoices")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="vouchers"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.vouchers")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="customer_vouchers"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.customerVouchers")}
               </Link>
             </li>
           </ul>

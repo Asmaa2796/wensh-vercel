@@ -70,6 +70,15 @@ import DocumentReceptionReports from "./components/reportsAndStatistics/Document
 import AccountManagerRequestReports from "./components/reportsAndStatistics/AccountManagerRequestReports";
 import OperatorTripReports from "./components/reportsAndStatistics/OperatorTripReports";
 import TripRequestReport from "./components/reportsAndStatistics/TripRequestReport";
+import PurchaseRequests from "./components/purchaseRequests/PurchaseRequests";
+import InitialPurchaseRequests from "./components/purchaseRequests/InitialPurchaseRequests";
+import Maintenance from "./components/fleetVehiclesManagement/Maintenance";
+import Fuel from "./components/fleetVehiclesManagement/Fuel";
+import VehicleStatement from "./components/fleetVehiclesManagement/vehicleStatement";
+import SalesInvoices from "./components/invoicesAndDocuments/SalesInvoices";
+import PurchaseInvoices from "./components/invoicesAndDocuments/PurchaseInvoices";
+import Vouchers from "./components/invoicesAndDocuments/Vouchers";
+import CustomerVouchers from "./components/invoicesAndDocuments/CustomerVouchers";
 
 function App() {
   
@@ -144,6 +153,15 @@ function App() {
             <Route path="account_manager_request_reports" element={<AccountManagerRequestReports />} />
             <Route path="operator_trip_reports" element={<OperatorTripReports />} />
             <Route path="trip_request_report" element={<TripRequestReport />} />
+            <Route path="purchase_requests" element={<PurchaseRequests />} />
+            <Route path="initial_purchase_requests" element={<InitialPurchaseRequests />} />
+            <Route path="maintenance" element={<Maintenance />} />
+            <Route path="fuel" element={<Fuel />} />
+            <Route path="vehicle_statement" element={<VehicleStatement />} />
+            <Route path="sales_invoices" element={<SalesInvoices />} />
+            <Route path="purchase_invoices" element={<PurchaseInvoices />} />
+            <Route path="vouchers" element={<Vouchers />} />
+            <Route path="customer_vouchers" element={<CustomerVouchers />} />
           </Route>
         </Routes>
         <Footer />

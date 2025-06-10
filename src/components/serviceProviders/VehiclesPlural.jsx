@@ -12,7 +12,6 @@ const VehiclesPlural = () => {
   }, [setTitle, t, i18n.language]);
   return (
     <>
-      {/* form */}
       {/* Nav tabs */}
       <ul className="nav nav-tabs" id="myTab" role="tablist">
         <li className="nav-item">
@@ -72,11 +71,11 @@ const VehiclesPlural = () => {
               </div>
               <div className="col-xl-3 col-lg-3 col-md-6 col-12">
                 <label className="text-light">{t('labels.vehiclePlate')}</label>
-                <input type="text" className="input-bg" name="to" />
+                <input type="text" className="input-bg" name="vehicle_plate" />
               </div>
               <div className="col-xl-3 col-lg-3 col-md-6 col-12">
                 <label className="text-light">{t('labels.ownerIdNumber')}</label>
-                <input type="text" className="input-bg" name="vehicle_plate" />
+                <input type="text" className="input-bg" name="owner_id_number" />
               </div>
               <div className="col-xl-3 col-lg-3 col-md-6 col-12">
                 <label className="text-light">{t('labels.tripwayPartner')}</label>
