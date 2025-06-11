@@ -21,6 +21,13 @@ import { GiProfit } from "react-icons/gi";
 import { GiReceiveMoney } from "react-icons/gi";
 import { MdManageHistory } from "react-icons/md";
 import { FaFileInvoice } from "react-icons/fa6";
+import { FaArchive } from "react-icons/fa";
+import { MdOutlineCalculate } from "react-icons/md";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
+import { FaBuilding } from "react-icons/fa";
+import { IoMdSettings } from "react-icons/io";
+import { TiGroup } from "react-icons/ti";
+import { BiSolidReport } from "react-icons/bi";
 
 const SideNav = ({ isOpen, toggleSideNav }) => {
   const { t, i18n } = useTranslation("global");
@@ -1345,6 +1352,606 @@ const SideNav = ({ isOpen, toggleSideNav }) => {
                 {t("sidenav.customerVouchers")}
               </Link>
             </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/internal_sales"
+              ? "active"
+              : "" || currentPath === "/internal_purchases"
+              ? "active"
+              : "" || currentPath === "/internal_vouchers"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <FaFileInvoice />
+            {t("sidenav.internalInvoices")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="internal_sales"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.internalSales")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="internal_purchases"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.internalPurchases")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="internal_vouchers"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("labels.internalVouchers")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/chart_of_accounts"
+              ? "active"
+              : "" || currentPath === "/manual_entries"
+              ? "active"
+              : "" || currentPath === "/cost_center_accounts"
+              ? "active"
+              : "" || currentPath === "/financial_years"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <MdOutlineCalculate />
+            {t("sidenav.accounting")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="chart_of_accounts"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.chartOfAccounts")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="manual_entries"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.manualEntries")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="cost_center_accounts"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.costCenterAccounts")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="financial_years"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.financialYears")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/commissions"
+              ? "active"
+              : "" || currentPath === "/commission_reports"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <FaMoneyBillTransfer />
+            {t("sidenav.commissions")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="commissions"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.commissions")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="commission_reports"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.commissionReports")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/general_ledger"
+              ? "active"
+              : "" || currentPath === "/income_statement"
+              ? "active"
+              : "" || currentPath === "/balance_sheet"
+              ? "active"
+              : "" || currentPath === "/trial_balance"
+              ? "active"
+              : "" || currentPath === "/journal"
+              ? "active"
+              : "" || currentPath === "/account_statement"
+              ? "active"
+              : "" || currentPath === "/admin_account_statement"
+              ? "active"
+              : "" || currentPath === "/cost_center"
+              ? "active"
+              : "" || currentPath === "/tax_invoice_reports"
+              ? "active"
+              : "" || currentPath === "/customer_balances"
+              ? "active"
+              : "" || currentPath === "/customer_dues"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <BiSolidReport />
+            {t("sidenav.accountingReports")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="general_ledger"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.generalLedger")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="income_statement"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.incomeStatement")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="balance_sheet"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.balanceSheet")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="trial_balance"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.trialBalance")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="journal"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.journal")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="account_statement"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.accountStatement")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="admin_account_statement"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.adminAccountStatement")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="cost_center"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.costCenter")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="tax_invoice_reports"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.taxInvoiceReports")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="customer_balances"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.customerBalances")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="customer_dues"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.customerDues")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/team"
+              ? "active"
+              : "" || currentPath === "/team_transactions"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <TiGroup />
+            {t("sidenav.team")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="team"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.team")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="team_transactions"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.teamTransactions")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/company_documents"
+              ? "active"
+              : "" || currentPath === "/employee_documents"
+              ? "active"
+              : "" || currentPath === "/driver_documents"
+              ? "active"
+              : "" || currentPath === "/vehicle_documents"
+              ? "active"
+              : "" || currentPath === "/delegations_fleet"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <FaBuilding />
+            {t("sidenav.companyDocuments")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="company_documents"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.companyDocuments")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="employee_documents"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.employeeDocuments")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="driver_documents"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.driverDocuments")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="vehicle_documents"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.vehicleDocuments")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="delegations_fleet"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.delegationsFleet")}
+              </Link>
+            </li>
+          </ul>
+        </li>
+        <li className={`${currentPath === "/archive" ? "active" : ""}`}>
+          <Link to="archive" onClick={handleLinkClick}>
+            <span className="text-gray">
+              <FaArchive />
+              {t("sidenav.archive")}
+            </span>
+          </Link>
+        </li>
+        <li
+          className={`dropdown 
+          ${
+            currentPath === "/service_categories"
+              ? "active"
+              : "" || currentPath === "/compensation_categories"
+              ? "active"
+              : "" || currentPath === "/fleet_management_types"
+              ? "active"
+              : "" || currentPath === "/company_departments"
+              ? "active"
+              : ""
+          }`}
+        >
+          <a
+            className="dropdown-toggle text-gray"
+            data-bs-toggle="dropdown"
+            role="button"
+            aria-expanded="false"
+          >
+            <IoMdSettings />
+            {t("sidenav.settings")}
+          </a>
+          <ul className="dropdown-menu">
+            <li>
+              <Link
+                to="service_categories"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.serviceCategories")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="compensation_categories"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.compensationCategories")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="fleet_management_types"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.fleetManagementTypes")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="company_departments"
+                onClick={handleLinkClick}
+                className="dropdown-item"
+              >
+                <i
+                  className="bi bi-caret-left"
+                  style={{ marginLeft: "2px" }}
+                ></i>
+                {t("sidenav.companyDepartments")}
+              </Link>
+            </li>
+           
           </ul>
         </li>
       </ul>

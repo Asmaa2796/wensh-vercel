@@ -79,11 +79,21 @@ import SalesInvoices from "./components/invoicesAndDocuments/SalesInvoices";
 import PurchaseInvoices from "./components/invoicesAndDocuments/PurchaseInvoices";
 import Vouchers from "./components/invoicesAndDocuments/Vouchers";
 import CustomerVouchers from "./components/invoicesAndDocuments/CustomerVouchers";
+import InternalSales from "./components/internalInvoices/InternalSales";
+import InternalPurchases from "./components/internalInvoices/InternalPurchases";
+import InternalVouchers from "./components/internalInvoices/InternalVouchers";
+import Archive from "./components/archive/Archive";
+import Commissions from "./components/commissions/Commissions";
+import CommissionReports from "./components/commissions/CommissionReports";
+import Register from "./components/register/Register";
+import Login from "./components/login/Login";
+import { TitleProvider } from "./context/TitleContext";
 
 function App() {
   
   return (
     <>
+    <TitleProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Layout/>}>
@@ -162,11 +172,20 @@ function App() {
             <Route path="purchase_invoices" element={<PurchaseInvoices />} />
             <Route path="vouchers" element={<Vouchers />} />
             <Route path="customer_vouchers" element={<CustomerVouchers />} />
+            <Route path="internal_sales" element={<InternalSales />} />
+            <Route path="internal_purchases" element={<InternalPurchases />} />
+            <Route path="internal_vouchers" element={<InternalVouchers />} />
+            <Route path="archive" element={<Archive />} />
+            <Route path="commissions" element={<Commissions />} />
+            <Route path="commission_reports" element={<CommissionReports />} />
           </Route>
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
         </Routes>
         <Footer />
       </Router>
       <ToastContainer position="top-right" autoClose={1000} />
+      </TitleProvider>
     </>
   );
 }

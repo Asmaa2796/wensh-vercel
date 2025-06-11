@@ -274,7 +274,29 @@ select {
   outline: none;
   border: 1px solid var(--sub-color);
 }
-
+/* login & register */
+.form-div {
+  width:400px;
+  max-width:90%;
+  padding:20px;
+  border-radius:7px;
+  margin:20px auto;
+  background-color:var(--basic-color);
+  box-shadow:0px 4px 7px 4px #ddd;
+}
+.form-div button[type="submit"] {
+  color:var(--basic-color);
+  border:none;
+  background-color:var(--green-color);
+  border-radius:5px;
+  padding-block:8px;
+  margin-block:10px !important;
+}
+.form-div button:focus {outline:none}
+.form-div label {font-weight:bold;}
+.form-div input::placeholder {color:#ddd;font-size:12px;}
+.form-div input:focus {border-color:var(--green-color);}
+.form-div h5 {color:var(--green-color);font-weight:bold;text-align:center;margin-bottom:15px;}
 /* topnav */
 .topnav {
   background-color: var(--green-color);
@@ -325,6 +347,7 @@ button.notification span {
     right: 0;
     padding-top: 2px;
 }
+.topnav .dropdown-item {font-weight:bold;}
 /* sidenav */
 .sidenav {
   background-color: var(--gray-color);

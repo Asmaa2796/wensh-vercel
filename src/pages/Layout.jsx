@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import SideNav from "./SideNav";
 import { Outlet } from "react-router-dom";
-import { TitleProvider } from "../context/TitleContext";
 
 const Layout = () => {
   const [isSideNavOpen, setIsSideNavOpen] = useState(window.innerWidth >= 1200);
@@ -29,7 +28,7 @@ const Layout = () => {
     : "";
 
   return (
-    <TitleProvider>
+    <>
       <Navbar
         toggleSideNav={toggleSideNav}
         isSideNavOpen={isSideNavOpen}
@@ -41,7 +40,7 @@ const Layout = () => {
           <Outlet />
         </div>
       </div>
-    </TitleProvider>
+    </>
   );
 };
 
